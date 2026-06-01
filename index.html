@@ -68,6 +68,28 @@
             0% { opacity: 0; transform: translateY(10px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+
+        /* Pulsante ENTER THE WORLD */
+        .enter-btn {
+            margin-top: 35px;
+            padding: 12px 28px;
+            border: 2px solid #e63946;
+            color: #e63946;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            opacity: 0;
+            animation: fadeInText 3.2s ease forwards;
+            transition: 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            background: #e63946;
+            color: #0a0a0a;
+            box-shadow: 0 0 18px #e63946aa;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
@@ -77,5 +99,7 @@
     <h1>Arcidiacono Interactive</h1>
     <div class="line"></div>
     <p>Sito ufficiale in costruzione.</p>
+
+    <a href="#" class="enter-btn">ENTER THE WORLD</a>
 </body>
 </html>
