@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina 5</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Contenitore della crepa */
+    .crepa {
+        width: 2px;
+        height: 260px;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 0.9),
+            rgba(255, 0, 0, 0.4),
+            rgba(255, 0, 0, 0.9)
+        );
+        position: relative;
+        animation: pulse 3s infinite ease-in-out;
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+    }
+
+    /* Ramificazioni */
+    .crepa::before,
+    .crepa::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background: rgba(255, 0, 0, 0.7);
+        filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.6));
+    }
+
+    /* Ramificazione superiore */
+    .crepa::before {
+        height: 120px;
+        top: -20px;
+        left: -25px;
+        transform: rotate(-35deg);
+    }
+
+    /* Ramificazione inferiore */
+    .crepa::after {
+        height: 150px;
+        bottom: -30px;
+        left: 30px;
+        transform: rotate(40deg);
+    }
+
+    /* Pulsazione della crepa */
+    @keyframes pulse {
+        0% { opacity: 0.7; transform: scaleY(1); }
+        50% { opacity: 1; transform: scaleY(1.05); }
+        100% { opacity: 0.7; transform: scaleY(1); }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="crepa"></div>
+
+</body>
+</html>
