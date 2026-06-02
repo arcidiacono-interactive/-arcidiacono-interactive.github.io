@@ -1,172 +1,50 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pagina 5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 5</title>
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #000000;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-    svg {
-        width: 420px;
-        height: 420px;
-        overflow: visible;
-        animation: breathe 3.8s ease-in-out infinite;
-    }
+        .fracture {
+            width: 70vh;
+            opacity: 0;
+            filter: drop-shadow(0 0 0px #ff0000);
+            animation: draw 1.2s ease-out forwards,
+                       glow 0.8s ease-out 1.2s forwards,
+                       settle 0.2s ease-out 2s forwards;
+        }
 
-    .crack-main,
-    .crack-branch,
-    .crack-noise {
-        fill: none;
-        stroke: #ff0000;
-        stroke-width: 2.3;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        filter: drop-shadow(0 0 14px rgba(255, 0, 0, 1));
-        stroke-dasharray: 720;
-        stroke-dashoffset: 720;
-        animation: draw 3.8s ease-out forwards;
-    }
+        @keyframes draw {
+            0% { opacity: 0; stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+            100% { opacity: 1; stroke-dashoffset: 0; }
+        }
 
-    .crack-branch {
-        stroke-width: 2;
-        stroke-dasharray: 360;
-        stroke-dashoffset: 360;
-        animation: draw 3s ease-out forwards;
-    }
+        @keyframes glow {
+            0% { filter: drop-shadow(0 0 12px #ff0000); }
+            100% { filter: drop-shadow(0 0 0px #ff0000); }
+        }
 
-    .crack-noise {
-        stroke-width: 1.2;
-        opacity: 0.75;
-        stroke-dasharray: 200;
-        stroke-dashoffset: 200;
-        animation: draw 3.2s ease-out forwards;
-    }
-
-    /* Rami principali */
-    .branch-1 { animation-delay: 2.0s; }
-    .branch-2 { animation-delay: 2.3s; }
-    .branch-3 { animation-delay: 2.6s; }
-    .branch-4 { animation-delay: 2.9s; }
-    .branch-5 { animation-delay: 3.1s; }
-
-    /* Micro-crepe */
-    .noise-1 { animation-delay: 1.2s; }
-    .noise-2 { animation-delay: 1.5s; }
-    .noise-3 { animation-delay: 1.8s; }
-    .noise-4 { animation-delay: 2.0s; }
-    .noise-5 { animation-delay: 2.2s; }
-    .noise-6 { animation-delay: 2.4s; }
-    .noise-7 { animation-delay: 2.6s; }
-    .noise-8 { animation-delay: 2.8s; }
-    .noise-9 { animation-delay: 3.0s; }
-    .noise-10 { animation-delay: 3.2s; }
-    .noise-11 { animation-delay: 3.4s; }
-    .noise-12 { animation-delay: 3.6s; }
-
-    .origin-pulse {
-        fill: #ff0000;
-        filter: drop-shadow(0 0 16px rgba(255, 0, 0, 1));
-        animation: pulse 3s infinite ease-in-out;
-    }
-
-    @keyframes draw {
-        from { stroke-dashoffset: 720; }
-        to { stroke-dashoffset: 0; }
-    }
-
-    @keyframes breathe {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.02); }
-        100% { transform: scale(1); }
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 0.6; }
-        50% { transform: scale(1.7); opacity: 1; }
-        100% { transform: scale(1); opacity: 0.6; }
-    }
-</style>
-
+        @keyframes settle {
+            0% { transform: translate(1px, -1px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
 </head>
-<body>
 
-<svg viewBox="-70 -220 140 440">
-
-    <!-- Punto di origine -->
-    <circle class="origin-pulse" cx="0" cy="0" r="1" />
-
-    <!-- Crepa principale (torsione verso sinistra) -->
-    <path class="crack-main" d="
-        M 0 0
-        L -4 -10
-        L 3 -22
-        L -9 -36
-        L 6 -52
-        L -12 -70
-        L 5 -89
-        L -14 -110
-        L 6 -132
-        L -16 -155
-        L 5 -180
-        L -14 -205
-        L 4 -230
-
-        M 0 0
-        L -5 12
-        L 4 26
-        L -10 42
-        L 7 60
-        L -12 79
-        L 6 99
-        L -15 120
-        L 7 142
-        L -14 166
-        L 5 191
-        L -11 216
-        L 3 240
-    " />
-
-    <!-- 5 RAMI PRINCIPALI (sinistra dominante, destra forte) -->
-    <path class="crack-branch branch-1" d="M 0 -60 L -14 -72 L -24 -86 L -34 -102 L -42 -120 L -48 -138" />
-    <path class="crack-branch branch-2" d="M 0 65 L -12 80 L -22 96 L -32 114 L -40 133 L -46 152" />
-    <path class="crack-branch branch-3" d="M 0 -30 L -16 -42 L -26 -56 L -34 -72" />
-    <path class="crack-branch branch-4" d="M 0 30 L -14 44 L -24 60 L -32 78" />
-    <path class="crack-branch branch-5" d="M 0 -100 L -18 -118 L -28 -136 L -36 -156" />
-
-    <!-- RAMI DESTRI (più forti, più lunghi, più vivi) -->
-    <path class="crack-branch branch-6" d="M 0 -55 L 10 -63 L 18 -72 L 24 -82 L 28 -94" />
-    <path class="crack-branch branch-7" d="M 0 50 L 9 60 L 17 72 L 23 85 L 27 98" />
-    <path class="crack-branch branch-8" d="M 0 -15 L 8 -22 L 15 -30 L 20 -40" />
-    <path class="crack-branch branch-9" d="M 0 20 L 7 28 L 14 38 L 19 50" />
-
-    <!-- 12 MICRO-CREPE (sinistra + destra) -->
-    <path class="crack-noise noise-1" d="M -5 -85 L -11 -90 L -17 -95" />
-    <path class="crack-noise noise-2" d="M -8 -145 L -15 -150 L -22 -155" />
-    <path class="crack-noise noise-3" d="M -6 110 L -12 115 L -18 120" />
-    <path class="crack-noise noise-4" d="M -4 50 L -9 55 L -14 60" />
-    <path class="crack-noise noise-5" d="M -6 -45 L -12 -50 L -18 -55" />
-    <path class="crack-noise noise-6" d="M -10 150 L -16 155 L -22 160" />
-
-    <!-- MICRO-CREPE DESTRA -->
-    <path class="crack-noise noise-7" d="M 5 -70 L 10 -75 L 15 -80" />
-    <path class="crack-noise noise-8" d="M 6 90 L 12 95 L 18 100" />
-    <path class="crack-noise noise-9" d="M 4 -20 L 9 -25 L 14 -30" />
-    <path class="crack-noise noise-10" d="M 7 15 L 12 20 L 17 25" />
-    <path class="crack-noise noise-11" d="M 8 -110 L 14 -115 L 20 -120" />
-    <path class="crack-noise noise-12" d="M 6 130 L 12 135 L 18 140" />
-
-</svg>
-
+<body onclick="window.location.href='pagina6.html'">
+    <img src="Logo/Arcidiacono_Interactive_Logo/AI_Fracture_brandmark_v01.svg/arcidiacono-fracture.svg" class="fracture">
 </body>
 </html>
