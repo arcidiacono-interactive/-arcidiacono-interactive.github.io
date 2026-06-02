@@ -18,49 +18,49 @@
     }
 
     svg {
-        width: 360px;
-        height: 360px;
+        width: 380px;
+        height: 380px;
         overflow: visible;
-        animation: breathe 3.5s ease-in-out infinite;
+        animation: breathe 3.8s ease-in-out infinite;
     }
 
-    /* Crepe principali, secondarie e micro-crepe */
     .crack-main,
     .crack-branch,
     .crack-noise {
         fill: none;
         stroke: #ff0000;
-        stroke-width: 2.2;
+        stroke-width: 2.3;
         stroke-linecap: round;
         stroke-linejoin: round;
-        filter: drop-shadow(0 0 12px rgba(255, 0, 0, 1));
-        stroke-dasharray: 600;
-        stroke-dashoffset: 600;
-        animation: draw 3.6s ease-out forwards;
+        filter: drop-shadow(0 0 14px rgba(255, 0, 0, 1));
+        stroke-dasharray: 650;
+        stroke-dashoffset: 650;
+        animation: draw 3.8s ease-out forwards;
     }
 
     .crack-branch {
         stroke-width: 2;
-        stroke-dasharray: 300;
-        stroke-dashoffset: 300;
-        animation: draw 2.8s ease-out forwards;
-    }
-
-    .crack-noise {
-        stroke-width: 1.2;
-        opacity: 0.75;
-        stroke-dasharray: 180;
-        stroke-dashoffset: 180;
+        stroke-dasharray: 320;
+        stroke-dashoffset: 320;
         animation: draw 3s ease-out forwards;
     }
 
-    /* Delays per dare caos controllato */
+    .crack-noise {
+        stroke-width: 1.3;
+        opacity: 0.75;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        animation: draw 3.2s ease-out forwards;
+    }
+
+    /* Rami principali */
     .branch-1 { animation-delay: 2.0s; }
     .branch-2 { animation-delay: 2.3s; }
     .branch-3 { animation-delay: 2.6s; }
     .branch-4 { animation-delay: 2.9s; }
     .branch-5 { animation-delay: 3.1s; }
 
+    /* Micro-crepe */
     .noise-1 { animation-delay: 1.2s; }
     .noise-2 { animation-delay: 1.5s; }
     .noise-3 { animation-delay: 1.8s; }
@@ -69,31 +69,32 @@
     .noise-6 { animation-delay: 2.4s; }
     .noise-7 { animation-delay: 2.6s; }
     .noise-8 { animation-delay: 2.8s; }
+    .noise-9 { animation-delay: 3.0s; }
+    .noise-10 { animation-delay: 3.2s; }
+    .noise-11 { animation-delay: 3.4s; }
+    .noise-12 { animation-delay: 3.6s; }
 
     /* Punto di origine */
     .origin-pulse {
         fill: #ff0000;
-        filter: drop-shadow(0 0 14px rgba(255, 0, 0, 1));
+        filter: drop-shadow(0 0 16px rgba(255, 0, 0, 1));
         animation: pulse 3s infinite ease-in-out;
     }
 
-    /* Animazione disegno */
     @keyframes draw {
-        from { stroke-dashoffset: 600; }
+        from { stroke-dashoffset: 650; }
         to { stroke-dashoffset: 0; }
     }
 
-    /* Respiro della crepa */
     @keyframes breathe {
         0% { transform: scale(1); }
-        50% { transform: scale(1.015); }
+        50% { transform: scale(1.02); }
         100% { transform: scale(1); }
     }
 
-    /* Pulsazione del nucleo */
     @keyframes pulse {
         0% { transform: scale(1); opacity: 0.6; }
-        50% { transform: scale(1.6); opacity: 1; }
+        50% { transform: scale(1.7); opacity: 1; }
         100% { transform: scale(1); opacity: 0.6; }
     }
 </style>
@@ -101,63 +102,67 @@
 </head>
 <body>
 
-<svg viewBox="-30 -180 60 360">
+<svg viewBox="-35 -190 70 380">
 
     <!-- Punto di origine -->
-    <circle class="origin-pulse" cx="0" cy="0" r="0.9" />
+    <circle class="origin-pulse" cx="0" cy="0" r="1" />
 
-    <!-- Crepa principale (molto più aggressiva e seghettata) -->
+    <!-- Crepa principale (più sporca, più laterale, più viva) -->
     <path class="crack-main" d="
         M 0 0
         L 3 -8
-        L -4 -16
-        L 5 -25
-        L -6 -34
-        L 4 -44
-        L -5 -54
-        L 7 -65
-        L -7 -76
-        L 5 -88
-        L -4 -100
-        L 7 -113
-        L -6 -126
-        L 4 -140
-        L -3 -155
-        L 0 -170
+        L -5 -17
+        L 6 -27
+        L -7 -38
+        L 5 -50
+        L -6 -62
+        L 8 -75
+        L -9 -88
+        L 6 -102
+        L -5 -117
+        L 8 -133
+        L -7 -150
+        L 5 -168
+        L -4 -185
+        L 0 -200
 
         M 0 0
-        L -3 9
-        L 4 18
-        L -5 28
-        L 6 38
-        L -4 49
-        L 5 60
-        L -6 72
-        L 4 84
-        L -5 97
-        L 7 111
-        L -6 125
-        L 4 140
-        L -3 155
-        L 0 170
+        L -3 10
+        L 5 20
+        L -6 32
+        L 7 45
+        L -5 58
+        L 6 72
+        L -7 87
+        L 5 102
+        L -6 118
+        L 8 135
+        L -7 153
+        L 5 172
+        L -4 190
+        L 0 205
     " />
 
-    <!-- 5 RAMI PRINCIPALI -->
-    <path class="crack-branch branch-1" d="M 0 -55 L 7 -60 L 12 -66 L 9 -73 L 15 -80 L 11 -88 L 18 -96" />
-    <path class="crack-branch branch-2" d="M 0 60 L -6 66 L -12 72 L -9 79 L -15 87 L -11 95 L -18 103" />
-    <path class="crack-branch branch-3" d="M 0 -25 L -5 -30 L -10 -36 L -7 -42 L -13 -49" />
-    <path class="crack-branch branch-4" d="M 0 25 L 6 31 L 11 37 L 8 44 L 14 51" />
-    <path class="crack-branch branch-5" d="M 0 -95 L 5 -100 L 9 -106 L 6 -112 L 12 -118" />
+    <!-- 5 RAMI PRINCIPALI (più laterali e irregolari) -->
+    <path class="crack-branch branch-1" d="M 0 -60 L 8 -66 L 14 -73 L 10 -81 L 18 -90 L 13 -100 L 20 -110" />
+    <path class="crack-branch branch-2" d="M 0 65 L -7 72 L -14 80 L -10 89 L -18 98 L -13 108 L -21 118" />
+    <path class="crack-branch branch-3" d="M 0 -30 L -6 -36 L -12 -43 L -8 -51 L -15 -60" />
+    <path class="crack-branch branch-4" d="M 0 30 L 7 37 L 13 45 L 9 54 L 16 63" />
+    <path class="crack-branch branch-5" d="M 0 -100 L 6 -106 L 12 -113 L 9 -121 L 15 -130" />
 
-    <!-- 10 MICRO-CREPE (rumore sporco) -->
-    <path class="crack-noise noise-1" d="M 1 -78 L 4 -81 L 0 -84 L 5 -87" />
-    <path class="crack-noise noise-2" d="M -2 -130 L -5 -133 L -1 -136 L -4 -139" />
-    <path class="crack-noise noise-3" d="M 2 95 L 5 98 L 1 101 L 6 104" />
-    <path class="crack-noise noise-4" d="M -1 40 L -4 43 L -1 46 L -3 49" />
-    <path class="crack-noise noise-5" d="M 1 -40 L 3 -43 L 0 -46 L 4 -49" />
-    <path class="crack-noise noise-6" d="M -2 130 L -5 133 L -1 136 L -4 139" />
-    <path class="crack-noise noise-7" d="M 2 -110 L 5 -113 L 1 -116 L 6 -119" />
-    <path class="crack-noise noise-8" d="M -1 15 L -3 18 L 0 21 L -2 24" />
+    <!-- 12 MICRO-CREPE (sporco aggiuntivo) -->
+    <path class="crack-noise noise-1" d="M 1 -82 L 4 -85 L 0 -88 L 5 -91" />
+    <path class="crack-noise noise-2" d="M -2 -140 L -6 -144 L -1 -148 L -5 -152" />
+    <path class="crack-noise noise-3" d="M 2 105 L 6 109 L 1 113 L 7 117" />
+    <path class="crack-noise noise-4" d="M -1 45 L -4 49 L -1 53 L -3 57" />
+    <path class="crack-noise noise-5" d="M 1 -45 L 4 -49 L 0 -53 L 5 -57" />
+    <path class="crack-noise noise-6" d="M -2 145 L -6 149 L -1 153 L -5 157" />
+    <path class="crack-noise noise-7" d="M 2 -120 L 6 -124 L 1 -128 L 7 -132" />
+    <path class="crack-noise noise-8" d="M -1 18 L -3 22 L 0 26 L -2 30" />
+    <path class="crack-noise noise-9" d="M 3 -10 L 6 -13 L 2 -16 L 7 -19" />
+    <path class="crack-noise noise-10" d="M -3 -15 L -6 -18 L -2 -21 L -7 -24" />
+    <path class="crack-noise noise-11" d="M 3 75 L 6 78 L 2 81 L 7 84" />
+    <path class="crack-noise noise-12" d="M -3 90 L -6 93 L -2 96 L -7 99" />
 
 </svg>
 
