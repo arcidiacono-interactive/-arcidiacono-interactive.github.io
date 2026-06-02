@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina 3</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        color: white;
+        font-family: "Inter", sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Frase principale */
+    .frase {
+        opacity: 0;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        text-align: center;
+        animation: fadeIn 4s ease forwards, pulse 6s infinite ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.015); }
+        100% { transform: scale(1); }
+    }
+
+    /* Pulsante "Te la senti?" */
+    .continua {
+        margin-top: 60px;
+        opacity: 0;
+        font-size: 1.4rem;
+        color: #d62828;
+        cursor: pointer;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        animation: slideUp 1.5s ease forwards;
+        animation-delay: 2.5s;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .continua:hover {
+        color: #ff3b3b;
+        text-shadow: 0 0 12px #ff3b3b;
+        transform: scale(1.05);
+    }
+
+    /* Transizione verso Pagina 4 */
+    .fadeout {
+        animation: fadeToBlack 1.8s forwards ease;
+    }
+
+    @keyframes fadeToBlack {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="frase">
+    “Ci sono stanze dentro di noi che restano chiuse per anni.<br>
+    Non perché non abbiamo la chiave,<br>
+    ma perché temiamo ciò che potremmo trovare.”
+</div>
+
+<div class="continua" onclick="vaiAvanti()">
+    Te la senti?
+</div>
+
+<script>
+function vaiAvanti() {
+    document.body.classList.add("fadeout");
+    setTimeout(() => {
+        window.location.href = "pagina4.html";
+    }, 1800);
+}
+</script>
+
+</body>
+</html>
