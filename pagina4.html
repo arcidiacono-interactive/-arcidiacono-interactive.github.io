@@ -18,6 +18,8 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        opacity: 1;
+        transition: opacity 1.8s ease;
     }
 
     .testo {
@@ -34,6 +36,11 @@
         from { opacity: 0; }
         to { opacity: 1; }
     }
+
+    /* Fade-out verso Pagina 5 */
+    .fadeout {
+        opacity: 0;
+    }
 </style>
 
 </head>
@@ -48,6 +55,16 @@
     ma ogni passo che fai<br>
     ti riporta lì.”
 </div>
+
+<script>
+    // Attesa → fade-out → redirect alla Pagina 5
+    setTimeout(() => {
+        document.body.classList.add("fadeout");
+        setTimeout(() => {
+            window.location.href = "pagina5.html";
+        }, 1800); // durata fade-out
+    }, 5500); // tempo per leggere la frase prima della transizione
+</script>
 
 </body>
 </html>
