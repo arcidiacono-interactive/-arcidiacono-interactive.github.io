@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Arcidiacono Interactive – Enter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina 2</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            opacity: 0;
-            animation: fadeInScreen 1.2s ease forwards;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        color: white;
+        font-family: "Inter", sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        opacity: 1;
+        transition: opacity 1.8s ease;
+    }
 
-        @keyframes fadeInScreen {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    .frase {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 3s ease forwards;
+    }
 
-        .container {
-            text-align: center;
-        }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
 
-        .text-en {
-            font-size: 2rem;
-            opacity: 0;
-            animation: fadeInText 2s ease forwards;
-            animation-delay: 1.2s;
-        }
+    /* Fade-out verso Pagina 3 */
+    .fadeout {
+        opacity: 0;
+    }
+</style>
 
-        .text-it {
-            font-size: 2rem;
-            opacity: 0;
-            animation: fadeInText 2s ease forwards;
-            animation-delay: 3.2s;
-        }
-
-        @keyframes fadeInText {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="text-en">Every story has its fractures.</div>
-        <div class="text-it">Ogni storia ha le sue fratture.</div>
-    </div>
+
+<div class="frase">
+    Every story has its fractures.<br>
+    Ogni storia ha le sue fratture.
+</div>
+
+<script>
+    // Attesa di 3 secondi → fade-out → redirect
+    setTimeout(() => {
+        document.body.classList.add("fadeout");
+        setTimeout(() => {
+            window.location.href = "pagina3.html";
+        }, 1800); // durata fade-out
+    }, 3000); // attesa prima della transizione
+</script>
+
 </body>
 </html>
