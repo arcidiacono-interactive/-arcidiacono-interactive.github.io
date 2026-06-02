@@ -17,59 +17,108 @@
         overflow: hidden;
     }
 
-    /* Contenitore della crepa */
-    .crepa {
-        width: 2px;
-        height: 260px;
-        background: linear-gradient(
-            to bottom,
-            rgba(255, 0, 0, 0.9),
-            rgba(255, 0, 0, 0.4),
-            rgba(255, 0, 0, 0.9)
-        );
+    /* Punto di origine */
+    .origin {
+        width: 3px;
+        height: 3px;
+        background: red;
+        border-radius: 50%;
         position: relative;
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.8));
         animation: pulse 3s infinite ease-in-out;
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
     }
 
-    /* Ramificazioni */
-    .crepa::before,
-    .crepa::after {
-        content: "";
+    /* Linea verticale superiore */
+    .line-top {
         position: absolute;
+        bottom: 3px;
+        left: 1px;
         width: 2px;
-        background: rgba(255, 0, 0, 0.7);
-        filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.6));
+        height: 0;
+        background: red;
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+        animation: growTop 3s forwards ease-out;
     }
 
-    /* Ramificazione superiore */
-    .crepa::before {
-        height: 120px;
-        top: -20px;
-        left: -25px;
-        transform: rotate(-35deg);
+    /* Linea verticale inferiore */
+    .line-bottom {
+        position: absolute;
+        top: 3px;
+        left: 1px;
+        width: 2px;
+        height: 0;
+        background: red;
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+        animation: growBottom 3s forwards ease-out;
     }
 
-    /* Ramificazione inferiore */
-    .crepa::after {
-        height: 150px;
-        bottom: -30px;
-        left: 30px;
-        transform: rotate(40deg);
+    /* Ramificazione sinistra */
+    .branch-left {
+        position: absolute;
+        top: 40px;
+        left: -1px;
+        width: 0;
+        height: 2px;
+        background: red;
+        transform-origin: left center;
+        transform: rotate(-25deg);
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+        animation: branchLeft 2s forwards ease-out;
+        animation-delay: 2.2s;
     }
 
-    /* Pulsazione della crepa */
+    /* Ramificazione destra */
+    .branch-right {
+        position: absolute;
+        top: -40px;
+        left: 2px;
+        width: 0;
+        height: 2px;
+        background: red;
+        transform-origin: left center;
+        transform: rotate(30deg);
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+        animation: branchRight 2s forwards ease-out;
+        animation-delay: 2.4s;
+    }
+
+    /* Animazioni */
+    @keyframes growTop {
+        from { height: 0; }
+        to { height: 120px; }
+    }
+
+    @keyframes growBottom {
+        from { height: 0; }
+        to { height: 150px; }
+    }
+
+    @keyframes branchLeft {
+        from { width: 0; }
+        to { width: 80px; }
+    }
+
+    @keyframes branchRight {
+        from { width: 0; }
+        to { width: 100px; }
+    }
+
     @keyframes pulse {
-        0% { opacity: 0.7; transform: scaleY(1); }
-        50% { opacity: 1; transform: scaleY(1.05); }
-        100% { opacity: 0.7; transform: scaleY(1); }
+        0% { opacity: 0.7; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+        100% { opacity: 0.7; transform: scale(1); }
     }
 </style>
 
 </head>
 <body>
 
-<div class="crepa"></div>
+<div class="origin">
+    <div class="line-top"></div>
+    <div class="line-bottom"></div>
+    <div class="branch-left"></div>
+    <div class="branch-right"></div>
+</div>
 
 </body>
 </html>
