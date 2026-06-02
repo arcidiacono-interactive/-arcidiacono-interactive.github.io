@@ -18,8 +18,8 @@
     }
 
     svg {
-        width: 380px;
-        height: 380px;
+        width: 400px;
+        height: 400px;
         overflow: visible;
         animation: breathe 3.8s ease-in-out infinite;
     }
@@ -33,20 +33,20 @@
         stroke-linecap: round;
         stroke-linejoin: round;
         filter: drop-shadow(0 0 14px rgba(255, 0, 0, 1));
-        stroke-dasharray: 650;
-        stroke-dashoffset: 650;
+        stroke-dasharray: 700;
+        stroke-dashoffset: 700;
         animation: draw 3.8s ease-out forwards;
     }
 
     .crack-branch {
         stroke-width: 2;
-        stroke-dasharray: 320;
-        stroke-dashoffset: 320;
+        stroke-dasharray: 350;
+        stroke-dashoffset: 350;
         animation: draw 3s ease-out forwards;
     }
 
     .crack-noise {
-        stroke-width: 1.3;
+        stroke-width: 1.2;
         opacity: 0.75;
         stroke-dasharray: 200;
         stroke-dashoffset: 200;
@@ -74,7 +74,6 @@
     .noise-11 { animation-delay: 3.4s; }
     .noise-12 { animation-delay: 3.6s; }
 
-    /* Punto di origine */
     .origin-pulse {
         fill: #ff0000;
         filter: drop-shadow(0 0 16px rgba(255, 0, 0, 1));
@@ -82,7 +81,7 @@
     }
 
     @keyframes draw {
-        from { stroke-dashoffset: 650; }
+        from { stroke-dashoffset: 700; }
         to { stroke-dashoffset: 0; }
     }
 
@@ -102,67 +101,62 @@
 </head>
 <body>
 
-<svg viewBox="-35 -190 70 380">
+<svg viewBox="-60 -200 120 400">
 
     <!-- Punto di origine -->
     <circle class="origin-pulse" cx="0" cy="0" r="1" />
 
-    <!-- Crepa principale (più sporca, più laterale, più viva) -->
+    <!-- Crepa principale (torsione verso sinistra) -->
     <path class="crack-main" d="
         M 0 0
-        L 3 -8
-        L -5 -17
-        L 6 -27
-        L -7 -38
+        L -4 -10
+        L 3 -22
+        L -8 -35
         L 5 -50
-        L -6 -62
-        L 8 -75
-        L -9 -88
-        L 6 -102
-        L -5 -117
-        L 8 -133
-        L -7 -150
-        L 5 -168
-        L -4 -185
-        L 0 -200
+        L -10 -66
+        L 4 -83
+        L -12 -101
+        L 6 -120
+        L -14 -140
+        L 5 -162
+        L -12 -185
+        L 4 -210
 
         M 0 0
-        L -3 10
-        L 5 20
-        L -6 32
-        L 7 45
-        L -5 58
-        L 6 72
-        L -7 87
-        L 5 102
-        L -6 118
-        L 8 135
-        L -7 153
-        L 5 172
-        L -4 190
-        L 0 205
+        L -5 12
+        L 4 25
+        L -9 40
+        L 6 56
+        L -11 73
+        L 5 91
+        L -13 110
+        L 6 130
+        L -12 152
+        L 4 175
+        L -10 198
+        L 3 220
     " />
 
-    <!-- 5 RAMI PRINCIPALI (più laterali e irregolari) -->
-    <path class="crack-branch branch-1" d="M 0 -60 L 8 -66 L 14 -73 L 10 -81 L 18 -90 L 13 -100 L 20 -110" />
-    <path class="crack-branch branch-2" d="M 0 65 L -7 72 L -14 80 L -10 89 L -18 98 L -13 108 L -21 118" />
-    <path class="crack-branch branch-3" d="M 0 -30 L -6 -36 L -12 -43 L -8 -51 L -15 -60" />
-    <path class="crack-branch branch-4" d="M 0 30 L 7 37 L 13 45 L 9 54 L 16 63" />
-    <path class="crack-branch branch-5" d="M 0 -100 L 6 -106 L 12 -113 L 9 -121 L 15 -130" />
+    <!-- 5 RAMI PRINCIPALI (sbilanciati verso sinistra) -->
+    <path class="crack-branch branch-1" d="M 0 -60 L -12 -70 L -20 -82 L -28 -95 L -35 -110 L -40 -125" />
+    <path class="crack-branch branch-2" d="M 0 65 L -10 78 L -18 92 L -26 108 L -33 125 L -38 142" />
+    <path class="crack-branch branch-3" d="M 0 -30 L -14 -40 L -22 -52 L -30 -65" />
+    <path class="crack-branch branch-4" d="M 0 30 L -12 42 L -20 55 L -27 70" />
+    <path class="crack-branch branch-5" d="M 0 -100 L -16 -115 L -25 -130 L -33 -147" />
 
-    <!-- 12 MICRO-CREPE (sporco aggiuntivo) -->
-    <path class="crack-noise noise-1" d="M 1 -82 L 4 -85 L 0 -88 L 5 -91" />
-    <path class="crack-noise noise-2" d="M -2 -140 L -6 -144 L -1 -148 L -5 -152" />
-    <path class="crack-noise noise-3" d="M 2 105 L 6 109 L 1 113 L 7 117" />
-    <path class="crack-noise noise-4" d="M -1 45 L -4 49 L -1 53 L -3 57" />
-    <path class="crack-noise noise-5" d="M 1 -45 L 4 -49 L 0 -53 L 5 -57" />
-    <path class="crack-noise noise-6" d="M -2 145 L -6 149 L -1 153 L -5 157" />
-    <path class="crack-noise noise-7" d="M 2 -120 L 6 -124 L 1 -128 L 7 -132" />
-    <path class="crack-noise noise-8" d="M -1 18 L -3 22 L 0 26 L -2 30" />
-    <path class="crack-noise noise-9" d="M 3 -10 L 6 -13 L 2 -16 L 7 -19" />
-    <path class="crack-noise noise-10" d="M -3 -15 L -6 -18 L -2 -21 L -7 -24" />
-    <path class="crack-noise noise-11" d="M 3 75 L 6 78 L 2 81 L 7 84" />
-    <path class="crack-noise noise-12" d="M -3 90 L -6 93 L -2 96 L -7 99" />
+    <!-- 12 MICRO-CREPE (tutte sbilanciate verso sinistra) -->
+    <path class="crack-noise noise-1" d="M -5 -85 L -10 -90 L -15 -95" />
+    <path class="crack-noise noise-2" d="M -8 -145 L -14 -150 L -20 -155" />
+    <path class="crack-noise noise-3" d="M -6 110 L -12 115 L -18 120" />
+    <path class="crack-noise noise-4" d="M -4 50 L -9 55 L -14 60" />
+    <path class="crack-noise noise-5" d="M -6 -45 L -12 -50 L -18 -55" />
+    <path class="crack-noise noise-6" d="M -10 150 L -16 155 L -22 160" />
+    <path class="crack-noise noise-7" d="M -7 -120 L -14 -125 L -20 -130" />
+    <path class="crack-noise noise-8" d="M -3 20 L -8 25 L -13 30" />
+    <path class="crack-noise noise-9" d="M -12 -10 L -18 -15 L -24 -20" />
+    <path class="crack-noise noise-10" d="M -15 -25 L -21 -30 L -27 -35" />
+    <path class="crack-noise noise-11" d="M -10 80 L -16 85 L -22 90" />
+    <path class="crack-noise noise-12" d="M -14 95 L -20 100 L -26 105" />
 
 </svg>
 
