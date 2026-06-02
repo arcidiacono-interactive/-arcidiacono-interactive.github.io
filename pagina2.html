@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Arcidiacono Interactive – Enter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInScreen 1.2s ease forwards;
+        }
+
+        @keyframes fadeInScreen {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .text-en {
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeInText 2s ease forwards;
+            animation-delay: 1.2s;
+        }
+
+        .text-it {
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeInText 2s ease forwards;
+            animation-delay: 3.2s;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-en">Every story has its fractures.</div>
+        <div class="text-it">Ogni storia ha le sue fratture.</div>
+    </div>
+</body>
+</html>
