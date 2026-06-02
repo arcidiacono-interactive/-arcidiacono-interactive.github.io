@@ -17,108 +17,157 @@
         overflow: hidden;
     }
 
-    /* Punto di origine */
-    .origin {
-        width: 3px;
-        height: 3px;
-        background: red;
-        border-radius: 50%;
-        position: relative;
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.8));
+    svg {
+        width: 300px;
+        height: 300px;
+        overflow: visible;
+    }
+
+    .crack-main,
+    .crack-branch,
+    .crack-noise {
+        fill: none;
+        stroke: #ff0000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.9));
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: draw 3.2s ease-out forwards;
+    }
+
+    .crack-branch {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        animation: draw 2.4s ease-out forwards;
+    }
+
+    .crack-noise {
+        stroke-width: 1.2;
+        opacity: 0.7;
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+        animation: draw 2.8s ease-out forwards;
+    }
+
+    .branch-1 { animation-delay: 2.0s; }
+    .branch-2 { animation-delay: 2.3s; }
+    .noise-1 { animation-delay: 1.4s; }
+    .noise-2 { animation-delay: 1.8s; }
+    .noise-3 { animation-delay: 2.1s; }
+
+    .origin-pulse {
+        fill: #ff0000;
+        filter: drop-shadow(0 0 10px rgba(255, 0, 0, 1));
         animation: pulse 3s infinite ease-in-out;
     }
 
-    /* Linea verticale superiore */
-    .line-top {
-        position: absolute;
-        bottom: 3px;
-        left: 1px;
-        width: 2px;
-        height: 0;
-        background: red;
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
-        animation: growTop 3s forwards ease-out;
-    }
-
-    /* Linea verticale inferiore */
-    .line-bottom {
-        position: absolute;
-        top: 3px;
-        left: 1px;
-        width: 2px;
-        height: 0;
-        background: red;
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
-        animation: growBottom 3s forwards ease-out;
-    }
-
-    /* Ramificazione sinistra */
-    .branch-left {
-        position: absolute;
-        top: 40px;
-        left: -1px;
-        width: 0;
-        height: 2px;
-        background: red;
-        transform-origin: left center;
-        transform: rotate(-25deg);
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
-        animation: branchLeft 2s forwards ease-out;
-        animation-delay: 2.2s;
-    }
-
-    /* Ramificazione destra */
-    .branch-right {
-        position: absolute;
-        top: -40px;
-        left: 2px;
-        width: 0;
-        height: 2px;
-        background: red;
-        transform-origin: left center;
-        transform: rotate(30deg);
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
-        animation: branchRight 2s forwards ease-out;
-        animation-delay: 2.4s;
-    }
-
-    /* Animazioni */
-    @keyframes growTop {
-        from { height: 0; }
-        to { height: 120px; }
-    }
-
-    @keyframes growBottom {
-        from { height: 0; }
-        to { height: 150px; }
-    }
-
-    @keyframes branchLeft {
-        from { width: 0; }
-        to { width: 80px; }
-    }
-
-    @keyframes branchRight {
-        from { width: 0; }
-        to { width: 100px; }
+    @keyframes draw {
+        from { stroke-dashoffset: 400; }
+        to { stroke-dashoffset: 0; }
     }
 
     @keyframes pulse {
-        0% { opacity: 0.7; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.2); }
-        100% { opacity: 0.7; transform: scale(1); }
+        0% { transform: scale(1); opacity: 0.6; }
+        50% { transform: scale(1.4); opacity: 1; }
+        100% { transform: scale(1); opacity: 0.6; }
     }
 </style>
 
 </head>
 <body>
 
-<div class="origin">
-    <div class="line-top"></div>
-    <div class="line-bottom"></div>
-    <div class="branch-left"></div>
-    <div class="branch-right"></div>
-</div>
+<svg viewBox="-20 -150 40 300">
+
+    <!-- Punto di origine -->
+    <circle class="origin-pulse" cx="0" cy="0" r="0.7" />
+
+    <!-- Crepa principale (molto più seghettata) -->
+    <path class="crack-main" d="
+        M 0 0
+        L 1 -6
+        L -1 -12
+        L 2 -18
+        L -2 -25
+        L 1 -33
+        L -1 -40
+        L 3 -48
+        L -2 -55
+        L 2 -63
+        L -1 -70
+        L 1 -78
+        L -3 -87
+        L 2 -96
+        L -1 -105
+        L 0 -118
+
+        M 0 0
+        L -1 7
+        L 2 14
+        L -2 21
+        L 1 29
+        L -1 36
+        L 3 44
+        L -2 52
+        L 2 60
+        L -1 69
+        L 1 78
+        L -3 88
+        L 2 98
+        L -1 108
+        L 0 122
+    " />
+
+    <!-- Ramificazione 1 (più irregolare) -->
+    <path class="crack-branch branch-1" d="
+        M 0 -42
+        L 4 -46
+        L 7 -50
+        L 5 -55
+        L 10 -60
+        L 8 -66
+        L 12 -72
+        L 9 -78
+    " />
+
+    <!-- Ramificazione 2 (più irregolare) -->
+    <path class="crack-branch branch-2" d="
+        M 0 45
+        L -3 50
+        L -6 55
+        L -4 60
+        L -9 66
+        L -6 72
+        L -11 78
+        L -8 84
+    " />
+
+    <!-- Rumore aggiuntivo (micro‑crepe) -->
+    <path class="crack-noise noise-1" d="
+        M 0 -20
+        L 2 -23
+        L -1 -26
+        L 1 -29
+        L -2 -32
+    " />
+
+    <path class="crack-noise noise-2" d="
+        M 0 18
+        L -2 21
+        L 1 24
+        L -1 27
+        L 2 30
+    " />
+
+    <path class="crack-noise noise-3" d="
+        M -1 -60
+        L -3 -63
+        L -1 -66
+        L -4 -69
+    " />
+
+</svg>
 
 </body>
 </html>
