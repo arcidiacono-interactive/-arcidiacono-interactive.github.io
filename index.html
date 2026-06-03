@@ -28,6 +28,30 @@
             to { opacity: 1; }
         }
 
+        /* MENU PRINCIPALE */
+        .top-menu {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            gap: 22px;
+        }
+
+        .top-menu a {
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #ffffff;
+            opacity: 0.55;
+            text-decoration: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .top-menu a:hover {
+            opacity: 1;
+        }
+
         img {
             width: 160px;
             margin-bottom: 25px;
@@ -94,12 +118,22 @@
 </head>
 
 <body>
+
+    <!-- MENU PRINCIPALE -->
+    <div class="top-menu">
+      <a href="about.html">ABOUT</a>
+      <a href="gamepage.html">GAME</a>
+      <a href="devlog.html">DEVLOG</a>
+      <a href="social.html">SOCIAL</a>
+    </div>
+
     <img src="AI_logotipo_ArcidiaconoInteractive_v01.svg" alt="Logo Arcidiacono Interactive">
 
     <h1>Arcidiacono Interactive</h1>
     <div class="line"></div>
     <p>Sito ufficiale in costruzione.</p>
 
-   <a href="pagina2.html" class="enter-btn">ENTER THE WORLD</a>
+    <a href="pagina2.html" class="enter-btn">ENTER THE WORLD</a>
+
 </body>
 </html>
