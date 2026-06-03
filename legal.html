@@ -36,7 +36,7 @@ body::after {
   z-index: 2;
 }
 
-/* MENU FISSO */
+/* MENU PRINCIPALE */
 .top-menu {
   position: fixed;
   top: 20px;
@@ -60,68 +60,78 @@ body::after {
   opacity: 1;
 }
 
+/* Evita il viola dei link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
 /* Wrapper */
 .legal-wrapper {
   position: relative;
   z-index: 3;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
   line-height: 1.7;
-}
-
-/* TITOLI CENTRATI */
-.legal-title,
-.legal-subtitle {
   text-align: center;
 }
 
+/* Titoli */
 .legal-title {
   font-size: 1.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .legal-subtitle {
   font-size: 0.9rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
- letter-spacing: 0.16em;
   color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
+  margin-bottom: 30px;
 }
 
-/* Sezioni */
-.legal-section {
-  margin-top: 50px;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.legal-section h3 {
-  font-size: 1rem;
+/* SOTTO-MENU CONTESTUALE */
+.submenu {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 8px;
+  opacity: 0.75;
 }
 
-.legal-section p {
-  color: #cccccc;
-  font-size: 0.9rem;
+.submenu a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.submenu a:hover {
+  opacity: 1;
+}
+
+.submenu .active {
+  opacity: 1;
+}
+
+/* Contenuto */
+.legal-text {
+  text-align: left;
+  margin-top: 40px;
+  line-height: 1.8;
+  font-size: 0.95rem;
 }
 </style>
 </head>
 
 <body>
+
 <!-- MENU PRINCIPALE -->
 <div class="top-menu">
   <a href="about.html">ABOUT</a>
@@ -133,38 +143,26 @@ body::after {
 <div class="legal-wrapper">
 
   <div class="legal-title">LEGAL</div>
-  <div class="legal-subtitle">Informazioni e tutela</div>
+  <div class="legal-subtitle">ARCIDIACONO INTERACTIVE</div>
 
-  <div class="legal-section">
-    <h3>Copyright</h3>
-    <p>
-      Tutti i contenuti presenti su questo sito, inclusi testi, immagini, loghi, elementi grafici e materiali relativi ai progetti di Arcidiacono Interactive, sono protetti da copyright.  
-      È vietata la riproduzione, distribuzione o utilizzo non autorizzato di qualsiasi contenuto.
-    </p>
+  <!-- SOTTO-MENU -->
+  <div class="submenu">
+    <a href="about.html">ABOUT</a>
+    <a href="team.html">TEAM</a>
+    <a href="presskit.html">PRESS KIT</a>
+    <a href="legal.html" class="active">LEGAL</a>
   </div>
 
-  <div class="legal-section">
-    <h3>Proprietà intellettuale</h3>
-    <p>
-      I nomi, i marchi, le regioni narrative, i personaggi e gli elementi del gioco sono proprietà esclusiva di Arcidiacono Interactive.  
-      Qualsiasi utilizzo non autorizzato è proibito.
-    </p>
-  </div>
+  <div class="legal-text">
+    <p>Arcidiacono Interactive è un progetto indipendente. Tutti i contenuti presenti su questo sito — inclusi testi, immagini, loghi, elementi grafici e materiali multimediali — sono di proprietà esclusiva del creatore, salvo diversa indicazione.</p>
 
-  <div class="legal-section">
-    <h3>Privacy</h3>
-    <p>
-      Questo sito non raccoglie dati personali degli utenti.  
-      Eventuali futuri servizi che richiederanno dati saranno accompagnati da un’informativa dedicata.
-    </p>
-  </div>
+    <p>È vietata la copia, la distribuzione o l’utilizzo non autorizzato dei materiali presenti su questo sito. Per richieste di utilizzo, collaborazione o informazioni legali, è possibile contattare lo studio tramite l’indirizzo email ufficiale.</p>
 
-  <div class="legal-section">
-    <h3>Contatti</h3>
-    <p>
-      Per richieste legali o informazioni:  
-      <br>arcidiacono.interactive@gmail.com
-    </p>
+    <p>Email di riferimento: <strong>arcidiacono.interactive@gmail.com</strong></p>
+
+    <p>Questo sito non utilizza cookie di profilazione e non raccoglie dati personali a fini commerciali. Eventuali strumenti di terze parti integrati nel sito seguono le rispettive policy di utilizzo.</p>
+
+    <p>Arcidiacono Interactive si riserva il diritto di aggiornare o modificare i contenuti del sito senza preavviso.</p>
   </div>
 
 </div>
