@@ -17,7 +17,7 @@ body {
   overflow: hidden;
 }
 
-/* Contenitore centrale */
+/* Wrapper che gestisce il fade-out */
 .fracture-wrapper {
   width: 100%;
   height: 100%;
@@ -25,11 +25,11 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 1;
-  animation: fadeOut 1.4s ease-in forwards;
-  animation-delay: 4.2s; /* fade-out ritardato */
+  animation: fadeOut 1.6s ease-in forwards;
+  animation-delay: 4.6s;
 }
 
-/* Fade-in iniziale dell’SVG */
+/* Fade-in dell’SVG */
 .fadein {
   opacity: 0;
   animation: fadeIn 1.2s ease-out forwards;
@@ -39,16 +39,15 @@ body {
   to { opacity: 1; }
 }
 
-/* Fade-out finale del wrapper */
 @keyframes fadeOut {
   to { opacity: 0; }
 }
 
-/* Base animazione stroke */
+/* Animazione stroke */
 .crack {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: draw 0.7s ease-out forwards, glowPulse 3.4s ease-in-out infinite;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw 1.4s ease-out forwards, glowPulse 3.6s ease-in-out infinite;
 }
 
 /* Disegno progressivo */
@@ -56,33 +55,30 @@ body {
   to { stroke-dashoffset: 0; }
 }
 
-/* Glow rosso pulsante */
+/* Glow rosso */
 @keyframes glowPulse {
   0%   { filter: drop-shadow(0 0 3px #ff0000); }
-  50%  { filter: drop-shadow(0 0 9px #ff2a2a); }
+  50%  { filter: drop-shadow(0 0 10px #ff2a2a); }
   100% { filter: drop-shadow(0 0 3px #ff0000); }
 }
 
 /* Delay ramo-per-ramo */
 .p0 { animation-delay: 0ms; }
-.p1 { animation-delay: 120ms; }
-.p2 { animation-delay: 240ms; }
-.p3 { animation-delay: 360ms; }
-.p4 { animation-delay: 480ms; }
-.p5 { animation-delay: 600ms; }
-.p6 { animation-delay: 720ms; }
-.p7 { animation-delay: 840ms; }
-.p8 { animation-delay: 960ms; }
-.p9 { animation-delay: 1080ms; }
-.p10 { animation-delay: 1200ms; }
-.p11 { animation-delay: 1320ms; }
-.p12 { animation-delay: 1440ms; }
-.p13 { animation-delay: 1560ms; }
-.p14 { animation-delay: 1680ms; }
-.p15 { animation-delay: 1800ms; }
-.p16 { animation-delay: 1920ms; }
-.p17 { animation-delay: 2040ms; }
-.p18 { animation-delay: 2160ms; }
+.p1 { animation-delay: 140ms; }
+.p2 { animation-delay: 280ms; }
+.p3 { animation-delay: 420ms; }
+.p4 { animation-delay: 560ms; }
+.p5 { animation-delay: 700ms; }
+.p6 { animation-delay: 840ms; }
+.p7 { animation-delay: 980ms; }
+.p8 { animation-delay: 1120ms; }
+.p9 { animation-delay: 1260ms; }
+.p10 { animation-delay: 1400ms; }
+.p11 { animation-delay: 1540ms; }
+.p12 { animation-delay: 1680ms; }
+.p13 { animation-delay: 1820ms; }
+.p14 { animation-delay: 1960ms; }
+.p15 { animation-delay: 2100ms; }
 
 </style>
 </head>
@@ -90,47 +86,51 @@ body {
 <body>
 
 <div class="fracture-wrapper">
-  <svg class="fadein" xmlns="http://www.w3.org/2000/svg" width="70vh" viewBox="-80 -80 160 160">
+  <svg class="fadein" xmlns="http://www.w3.org/2000/svg" width="100vw" height="100vh" viewBox="-300 -300 600 600">
     <g fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round">
 
-      <!-- Tratto principale -->
-      <path class="crack p0" d="M -55 -55 L -42 -40 L -48 -25 L -32 -12 L -38 5 L -22 18 L -30 32 L -14 44 L -20 58 L -5 68 L -10 78 L 8 86" stroke-width="4.2"/>
+      <!-- Crepa principale FULLSCREEN, sottile, centrata con deviazione leggera -->
+      <path class="crack p0" d="
+        M 0 -320
+        L 0 -250
+        L -8 -180
+        L 4 -110
+        L -6 -40
+        L 3 20
+        L -5 80
+        L 6 150
+        L -4 220
+        L 0 300
+      " stroke-width="2.2"/>
 
-      <!-- Rami principali sinistra -->
-      <path class="crack p1" d="M -42 -40 L -60 -38 L -70 -30" stroke-width="3.2"/>
-      <path class="crack p2" d="M -32 -12 L -50 -8 L -62 2" stroke-width="3.0"/>
-      <path class="crack p3" d="M -22 18 L -40 22 L -55 32" stroke-width="3.0"/>
-      <path class="crack p4" d="M -14 44 L -32 50 L -46 60" stroke-width="3.0"/>
-      <path class="crack p5" d="M -5 68 L -24 74 L -38 84" stroke-width="3.0"/>
-
-      <!-- Rami principali destra -->
-      <path class="crack p6" d="M -48 -25 L -34 -30 L -22 -36" stroke-width="3.0"/>
-      <path class="crack p7" d="M -38 5 L -24 0 L -12 -6" stroke-width="2.8"/>
-      <path class="crack p8" d="M -30 32 L -16 28 L -4 22" stroke-width="2.8"/>
-      <path class="crack p9" d="M -20 58 L -6 54 L 6 48" stroke-width="2.8"/>
+      <!-- Rami laterali sottili -->
+      <path class="crack p1" d="M -8 -180 L -40 -160 L -70 -150" stroke-width="1.4"/>
+      <path class="crack p2" d="M 4 -110 L 30 -90 L 55 -70" stroke-width="1.4"/>
+      <path class="crack p3" d="M -6 -40 L -28 -20 L -50 -5" stroke-width="1.4"/>
+      <path class="crack p4" d="M 3 20 L 26 40 L 48 55" stroke-width="1.4"/>
+      <path class="crack p5" d="M -5 80 L -32 100 L -58 120" stroke-width="1.4"/>
+      <path class="crack p6" d="M 6 150 L 34 170 L 60 190" stroke-width="1.4"/>
+      <path class="crack p7" d="M -4 220 L -28 240 L -52 260" stroke-width="1.4"/>
 
       <!-- Micro-crepe -->
-      <path class="crack p10" d="M -52 -20 L -58 -16 L -64 -12" stroke-width="1.4"/>
-      <path class="crack p11" d="M -44 10 L -50 14 L -56 18" stroke-width="1.4"/>
-      <path class="crack p12" d="M -26 40 L -32 44 L -38 48" stroke-width="1.4"/>
-      <path class="crack p13" d="M -12 62 L -18 66 L -24 70" stroke-width="1.4"/>
-      <path class="crack p14" d="M -30 0 L -36 -4 L -42 -8" stroke-width="1.4"/>
-      <path class="crack p15" d="M -18 24 L -24 20 L -30 16" stroke-width="1.4"/>
-
-      <!-- Micro-crepe destra -->
-      <path class="crack p16" d="M -36 -18 L -28 -22 L -20 -26" stroke-width="1.4"/>
-      <path class="crack p17" d="M -28 14 L -20 10 L -12 6" stroke-width="1.4"/>
-      <path class="crack p18" d="M -22 50 L -14 46 L -6 42" stroke-width="1.4"/>
+      <path class="crack p8" d="M 0 -250 L 18 -260" stroke-width="1.0"/>
+      <path class="crack p9" d="M -8 -180 L -20 -190" stroke-width="1.0"/>
+      <path class="crack p10" d="M 4 -110 L 18 -118" stroke-width="1.0"/>
+      <path class="crack p11" d="M -6 -40 L -18 -48" stroke-width="1.0"/>
+      <path class="crack p12" d="M 3 20 L 16 12" stroke-width="1.0"/>
+      <path class="crack p13" d="M -5 80 L -18 72" stroke-width="1.0"/>
+      <path class="crack p14" d="M 6 150 L 20 142" stroke-width="1.0"/>
+      <path class="crack p15" d="M -4 220 L -18 212" stroke-width="1.0"/>
 
     </g>
   </svg>
 </div>
 
 <script>
-/* Redirect automatico alla Pagina 6 */
+/* Redirect alla Pagina 6 */
 setTimeout(() => {
   window.location.href = "pagina6.html";
-}, 5600); /* leggermente aumentato per sicurezza */
+}, 6000);
 </script>
 
 </body>
