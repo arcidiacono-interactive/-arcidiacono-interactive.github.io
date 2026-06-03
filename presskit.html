@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Kit – Arcidiacono Interactive</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+/* MENU FISSO MINIMAL */
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  gap: 22px;
+}
+
+.top-menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.top-menu a:hover {
+  opacity: 1;
+}
+
+/* Wrapper */
+.press-wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  line-height: 1.7;
+}
+
+/* Titoli */
+.press-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.press-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaaaaa;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Sezioni */
+.press-section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.press-content {
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.download-box {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.03);
+}
+
+.download-box a {
+  color: #ffffff;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.download-box a:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU FISSO -->
+<div class="top-menu">
+  <a href="about.html">ABOUT</a>
+  <a href="team.html">TEAM</a>
+  <a href="presskit.html">PRESS KIT</a>
+  <a href="devlog.html">DEVLOG</a>
+  <a href="roadmap.html">ROADMAP</a>
+  <a href="social.html">SOCIAL HUB</a>
+  <a href="legal.html">LEGAL</a>
+</div>
+
+<div class="press-wrapper">
+
+  <div class="press-title">PRESS KIT</div>
+  <div class="press-subtitle">Materiale ufficiale</div>
+
+  <div class="press-content">
+
+    <div class="press-section-title">Descrizione breve</div>
+    <p>
+      Arcidiacono Interactive è uno studio d’autore dedicato alla creazione di esperienze narrative e psicologiche ad alto impatto emotivo.  
+      Ogni progetto nasce da una visione personale e da un linguaggio simbolico che parla direttamente al giocatore.
+    </p>
+
+    <div class="press-section-title">Descrizione estesa</div>
+    <p>
+      Lo studio si concentra su atmosfere cinematografiche, storytelling emotivo e un design essenziale ma ricco di significato.  
+      L’obiettivo è creare mondi che non si limitino a essere giocati, ma che vengano vissuti, interpretati e ricordati.
+    </p>
+
+    <div class="press-section-title">Logo & Branding</div>
+    <div class="download-box">
+      <p>Scarica il materiale ufficiale:</p>
+      <p>
+        • <a href="AI_logotipo_ArcidiaconoInteractive.png" download>Logo PNG</a><br>
+        • <a href="arcidiacono-fracture.svg" download>Logo SVG</a>
+      </p>
+    </div>
+
+    <div class="press-section-title">Contatti ufficiali</div>
+    <p>
+      Per richieste stampa, interviste o collaborazioni:<br>
+      <strong>arcidiacono.interactive@gmail.com</strong>
+    </p>
+
+    <p style="margin-top: 35px; font-weight: 600; letter-spacing: 0.03em;">
+      Ogni storia che raccontiamo nasce da un’emozione.  
+      Ogni emozione merita di essere condivisa.
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
