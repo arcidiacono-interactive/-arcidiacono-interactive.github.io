@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team – Arcidiacono Interactive</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+.team-wrapper {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 20px 60px;
+}
+
+/* Titoli */
+.team-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.team-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaaaaa;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Contenuto */
+.team-content {
+  max-width: 820px;
+  margin-top: 40px;
+  line-height: 1.7;
+  font-size: 0.98rem;
+  color: #d8d8d8;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.team-section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="team-wrapper">
+
+  <div class="team-title">TEAM</div>
+  <div class="team-subtitle">Arcidiacono Interactive</div>
+
+  <div class="team-content">
+
+    <p>
+      Arcidiacono Interactive è uno studio d’autore guidato da una visione chiara: creare esperienze narrative e psicologiche che parlino direttamente al giocatore.  
+      Ogni progetto nasce da un’idea precisa, da un’emozione che merita spazio, forma e ritmo.
+    </p>
+
+    <div class="team-section-title">Creative Director</div>
+    <p>
+      La direzione creativa è affidata a <strong>Cristian Arcidiacono</strong>, autore e responsabile dell’identità artistica, narrativa e strutturale dei progetti dello studio.  
+      Ogni elemento — atmosfera, simbolismo, ritmo, tono — viene curato in modo coerente per garantire un’esperienza unificata e riconoscibile.
+    </p>
+
+    <div class="team-section-title">Competenze</div>
+    <p>
+      Direzione artistica, scrittura narrativa, worldbuilding psicologico, level design atmosferico, gestione del ritmo emotivo, cura dei dettagli visivi e sonori.  
+      L’obiettivo è creare mondi che non si limitino a essere giocati, ma che vengano <em>sentiti</em>.
+    </p>
+
+    <div class="team-section-title">Filosofia</div>
+    <p>
+      Arcidiacono Interactive lavora con un approccio essenziale: meno elementi, più significato.  
+      Ogni scelta è intenzionale, ogni scena ha un peso, ogni silenzio racconta qualcosa.  
+      La priorità non è la quantità, ma la profondità.
+    </p>
+
+    <div class="team-section-title">Collaborazioni</div>
+    <p>
+      Lo studio collabora con professionisti selezionati quando il progetto lo richiede, mantenendo sempre una direzione artistica unificata.  
+      Ogni collaborazione è scelta per affinità stilistica, sensibilità narrativa e attenzione al dettaglio.
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
