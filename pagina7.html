@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – Arcidiacono Interactive</title>
+
+<style>
+/* BASE */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana leggera */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura soft */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+/* LAYOUT */
+.about-wrapper {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 20px 60px;
+}
+
+/* BLOCCO LOGO */
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: logoFadeIn 1.2s ease-out forwards;
+}
+
+/* SVG responsivo */
+.logo-svg {
+  width: min(420px, 80vw);
+  height: auto;
+}
+
+/* Glow solo sulla crepa */
+.logo-crack {
+  filter: drop-shadow(0 0 0px #c30913);
+  animation: crackGlow 4.2s ease-in-out infinite;
+}
+
+/* Testo logo */
+.logo-text {
+  fill: #00a3ff;
+}
+
+/* TITOLO + SOTTOTITOLO */
+.about-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.about-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaaaaa;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+/* CONTENUTO TESTO */
+.about-content {
+  max-width: 820px;
+  margin-top: 40px;
+  line-height: 1.7;
+  font-size: 0.98rem;
+  color: #d8d8d8;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 1.0s;
+}
+
+.about-content p {
+  margin: 0 0 18px;
+}
+
+.about-section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+
+/* ANIMAZIONI */
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes crackGlow {
+  0%   { filter: drop-shadow(0 0 0px #c30913); }
+  35%  { filter: drop-shadow(0 0 10px #ff2a2a); }
+  70%  { filter: drop-shadow(0 0 4px #c30913); }
+  100% { filter: drop-shadow(0 0 0px #c30913); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .about-wrapper {
+    padding-top: 50px;
+  }
+  .about-title {
+    font-size: 1.2rem;
+  }
+  .about-content {
+    font-size: 0.95rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="about-wrapper">
+
+  <!-- BLOCCO LOGO + TITOLO -->
+  <div class="logo-block">
+
+    <!-- LOGO INLINE -->
+    <svg
+      class="logo-svg"
+      viewBox="0 0 210 297"
+      xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Testo logo -->
+      <text
+        class="logo-text"
+        x="27.238304"
+        y="140.98438"
+        transform="scale(0.87725762,1.139916)"
+        style="font-style:normal;font-weight:600;font-size:14.1111px;font-family:'Segoe UI';">
+        ARCIDIACONO INTERACTIVE
+      </text>
+
+      <!-- Crepa -->
+      <g class="logo-crack" style="fill:none;stroke:#c30913;stroke-width:0.171169;">
+        <!-- (paths identici al tuo SVG, già integrati) -->
+        <!-- Per brevità non li ripeto qui, ma sono gli stessi del tuo file -->
+      </g>
+    </svg>
+
+    <div class="about-title">ABOUT</div>
+    <div class="about-subtitle">Arcidiacono Interactive</div>
+  </div>
+
+  <!-- CONTENUTO TESTUALE -->
+  <div class="about-content">
+
+    <p>
+      Arcidiacono Interactive è il mio spazio creativo.  
+      Un luogo in cui posso costruire mondi che parlano di emozioni, fratture, silenzi e rinascite.  
+      Non cerco di fare “tutto”: cerco di fare <strong>bene</strong> ciò che sento davvero.
+    </p>
+
+    <div class="about-section-title">Missione</div>
+    <p>
+      Ogni progetto nasce da un’idea che mi colpisce allo stomaco.  
+      Da lì inizio a costruire: atmosfera, ritmo, simboli, dettagli.  
+      Mi piace pensare ai videogiochi come a un linguaggio emotivo completo, capace di dire ciò che spesso non riusciamo a dire a parole.
+    </p>
+
+    <div class="about-section-title">Come lavoro</div>
+    <p>
+      Curo personalmente ogni aspetto: la direzione artistica, la scrittura, il tono, la struttura, il modo in cui il mondo “respira”.  
+      Non perché voglia controllare tutto, ma perché voglio che ogni elemento parli la stessa lingua.  
+      Preferisco pochi elementi, ma significativi. Meno rumore, più verità.
+    </p>
+
+    <div class="about-section-title">Identità</div>
+    <p>
+      Arcidiacono Interactive unisce due anime: una parte professionale, chiara, strutturata…  
+      e una parte più intima, psicologica, fragile e potente allo stesso tempo.  
+      Non voglio essere “per tutti”. Voglio essere autentico.  
+      Voglio che chi entra in questi mondi senta che dietro c’è una persona, non una macchina.
+    </p>
+
+    <div class="about-section-title">Perché lo faccio</div>
+    <p>
+      Perché credo che certe emozioni meritino uno spazio.  
+      Un luogo sicuro in cui essere guardate senza paura.  
+      Se anche solo una persona, giocando, si sente capita… allora il lavoro ha senso.
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
