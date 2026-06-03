@@ -36,7 +36,7 @@ body::after {
   z-index: 2;
 }
 
-/* MENU FISSO */
+/* MENU PRINCIPALE */
 .top-menu {
   position: fixed;
   top: 20px;
@@ -60,68 +60,84 @@ body::after {
   opacity: 1;
 }
 
+/* Evita il viola dei link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
 /* Wrapper */
 .social-wrapper {
   position: relative;
   z-index: 3;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+  text-align: center;
   line-height: 1.7;
 }
 
-/* TITOLI CENTRATI */
-.social-title,
-.social-subtitle {
-  text-align: center;
-}
-
+/* Titoli */
 .social-title {
   font-size: 1.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .social-subtitle {
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Link Social */
-.social-list {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.social-item a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.65;
+  color: #aaaaaa;
+  margin-bottom: 30px;
+}
+
+/* SOTTO-MENU CONTESTUALE */
+.submenu {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.6;
   transition: opacity 0.25s ease;
 }
 
-.social-item a:hover {
+.submenu a:hover {
   opacity: 1;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.submenu .active {
+  opacity: 1;
+}
+
+/* Link social */
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 1rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+.social-links a:hover {
+  opacity: 1;
 }
 </style>
 </head>
@@ -139,34 +155,24 @@ body::after {
 <div class="social-wrapper">
 
   <div class="social-title">SOCIAL HUB</div>
-  <div class="social-subtitle">Rimani connesso</div>
+  <div class="social-subtitle">ARCIDIACONO INTERACTIVE</div>
 
-  <div class="social-list">
+  <!-- SOTTO-MENU -->
+  <div class="submenu">
+    <a href="social.html" class="active">SOCIAL HUB</a>
+    <a href="presskit.html">PRESS KIT</a>
+    <a href="legal.html">LEGAL</a>
+  </div>
 
-    <div class="social-item">
-      <a href="#" target="_blank">Instagram</a>
-    </div>
+  <p>Qui troverai tutti i canali ufficiali di Arcidiacono Interactive.  
+  Anche se alcuni non sono ancora attivi, la struttura è già pronta per accoglierli.</p>
 
-    <div class="social-item">
-      <a href="#" target="_blank">YouTube</a>
-    </div>
-
-    <div class="social-item">
-      <a href="#" target="_blank">TikTok</a>
-    </div>
-
-    <div class="social-item">
-      <a href="#" target="_blank">Twitter / X</a>
-    </div>
-
-    <div class="social-item">
-      <a href="#" target="_blank">Discord</a>
-    </div>
-
-    <div class="social-item">
-      <a href="#" target="_blank">Steam (in arrivo)</a>
-    </div>
-
+  <div class="social-links">
+    <a href="#" target="_blank">Instagram (in arrivo)</a>
+    <a href="#" target="_blank">YouTube (in arrivo)</a>
+    <a href="#" target="_blank">TikTok (in arrivo)</a>
+    <a href="#" target="_blank">Steam Page (in arrivo)</a>
+    <a href="mailto:arcidiacono.interactive@gmail.com">Email ufficiale</a>
   </div>
 
 </div>
