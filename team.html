@@ -36,6 +36,31 @@ body::after {
   z-index: 2;
 }
 
+/* MENU FISSO MINIMAL */
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  gap: 22px;
+}
+
+.top-menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.top-menu a:hover {
+  opacity: 1;
+}
+
+/* Wrapper */
 .team-wrapper {
   position: relative;
   z-index: 3;
@@ -43,7 +68,7 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 20px 60px;
+  padding: 120px 20px 60px;
 }
 
 /* Titoli */
@@ -52,7 +77,6 @@ body::after {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  color: #ffffff;
   opacity: 0;
   animation: fadeIn 1.2s ease-out forwards;
 }
@@ -88,7 +112,6 @@ body::after {
   margin-bottom: 10px;
 }
 
-/* Animazioni */
 @keyframes fadeIn {
   to { opacity: 1; }
 }
@@ -96,6 +119,17 @@ body::after {
 </head>
 
 <body>
+
+<!-- MENU FISSO -->
+<div class="top-menu">
+  <a href="about.html">ABOUT</a>
+  <a href="team.html">TEAM</a>
+  <a href="presskit.html">PRESS KIT</a>
+  <a href="devlog.html">DEVLOG</a>
+  <a href="roadmap.html">ROADMAP</a>
+  <a href="social.html">SOCIAL HUB</a>
+  <a href="legal.html">LEGAL</a>
+</div>
 
 <div class="team-wrapper">
 
