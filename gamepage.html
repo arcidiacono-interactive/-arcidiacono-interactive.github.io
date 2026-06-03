@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Gioco – Arcidiacono Interactive</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+/* MENU FISSO */
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  gap: 22px;
+}
+
+.top-menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.top-menu a:hover {
+  opacity: 1;
+}
+
+/* Wrapper */
+.game-wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  line-height: 1.7;
+}
+
+/* TITOLI CENTRATI */
+.game-title,
+.game-subtitle {
+  text-align: center;
+}
+
+.game-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.game-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaaaaa;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Sezioni */
+.game-section {
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.game-section h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 8px;
+}
+
+.game-section p {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+/* Screenshot placeholder */
+.screenshot-box {
+  width: 100%;
+  height: 260px;
+  background: #111;
+  border: 1px solid #333;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU FISSO -->
+<div class="top-menu">
+  <a href="about.html">ABOUT</a>
+  <a href="team.html">TEAM</a>
+  <a href="presskit.html">PRESS KIT</a>
+  <a href="devlog.html">DEVLOG</a>
+  <a href="roadmap.html">ROADMAP</a>
+  <a href="social.html">SOCIAL HUB</a>
+  <a href="legal.html">LEGAL</a>
+</div>
+
+<div class="game-wrapper">
+
+  <div class="game-title">IL GIOCO</div>
+  <div class="game-subtitle">Un viaggio dentro la frattura</div>
+
+  <div class="game-section">
+    <h3>Tagline</h3>
+    <p>
+      Un’esperienza narrativa psicologica che attraversa sette regioni interiori, ognuna più profonda della precedente.
+    </p>
+  </div>
+
+  <div class="game-section">
+    <h3>Descrizione</h3>
+    <p>
+      Il protagonista intraprende un viaggio simbolico attraverso le proprie ferite emotive, esplorando luoghi che 
+      rappresentano stati interiori, memorie, pressioni e crolli. Ogni regione è un frammento della sua psiche, 
+      un ambiente vivo che reagisce al suo cambiamento.
+    </p>
+  </div>
+
+  <div class="game-section">
+    <h3>Le Regioni</h3>
+    <p>
+      Il mondo è diviso in sette regioni, ognuna con un’identità visiva e simbolica unica.  
+      La <strong>Regione 4</strong>, già in sviluppo avanzato, rappresenta il punto di rottura: 
+      un luogo claustrofobico, carico di pressione emotiva, dove ogni cassetto aperto rivela un frammento del passato.
+    </p>
+  </div>
+
+  <div class="game-section">
+    <h3>Atmosfera</h3>
+    <p>
+      Un’estetica cinematografica, minimalista, con grana, vignettatura e luce controllata.  
+      Il mondo non è solo da esplorare: è da interpretare.
+    </p>
+  </div>
+
+  <div class="game-section">
+    <h3>Screenshot</h3>
+    <div class="screenshot-box">IMMAGINE IN ARRIVO</div>
+  </div>
+
+</div>
+
+</body>
+</html>
