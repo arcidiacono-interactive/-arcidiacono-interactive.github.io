@@ -36,7 +36,7 @@ body::after {
   z-index: 2;
 }
 
-/* MENU FISSO MINIMAL */
+/* MENU PRINCIPALE */
 .top-menu {
   position: fixed;
   top: 20px;
@@ -60,71 +60,113 @@ body::after {
   opacity: 1;
 }
 
+/* Evita il viola dei link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
 /* Wrapper */
 .devlog-wrapper {
   position: relative;
   z-index: 3;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
   line-height: 1.7;
 }
 
-/* TITOLI CENTRATI */
-.devlog-title,
-.devlog-subtitle {
-  text-align: center;
-}
-
+/* Titoli */
 .devlog-title {
+  text-align: center;
   font-size: 1.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .devlog-subtitle {
+  text-align: center;
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Sezioni */
-.devlog-entry {
-  margin-top: 50px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #222;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.devlog-entry h3 {
-  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 8px;
+  color: #aaaaaa;
+  margin-bottom: 30px;
 }
 
-.devlog-entry .date {
+/* SOTTO-MENU */
+.submenu {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
   font-size: 0.8rem;
-  color: #888;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.submenu a:hover {
+  opacity: 1;
+}
+
+.submenu .active {
+  opacity: 1;
+}
+
+/* Categorie Devlog */
+.devlog-section {
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+.devlog-section-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #dddddd;
+  margin-bottom: 14px;
+  border-left: 2px solid #ffffff;
+  padding-left: 10px;
+}
+
+/* Lista entry */
+.devlog-entry {
   margin-bottom: 14px;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.devlog-entry-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.devlog-entry-meta {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-bottom: 3px;
+}
+
+.devlog-entry a {
+  text-decoration: none;
+}
+
+.devlog-entry-desc {
+  font-size: 0.9rem;
+  color: #cccccc;
 }
 </style>
 </head>
 
 <body>
+
 <!-- MENU PRINCIPALE -->
 <div class="top-menu">
   <a href="about.html">ABOUT</a>
@@ -136,41 +178,160 @@ body::after {
 <div class="devlog-wrapper">
 
   <div class="devlog-title">DEVLOG</div>
-  <div class="devlog-subtitle">Aggiornamenti di sviluppo</div>
+  <div class="devlog-subtitle">ARCIDIACONO INTERACTIVE</div>
 
-  <!-- ENTRY 1 -->
-  <div class="devlog-entry">
-    <h3>Inizio della documentazione ufficiale</h3>
-    <div class="date">Giugno 2026</div>
-    <p>
-      Il devlog prende forma come spazio dedicato alla crescita del progetto.  
-      Qui verranno raccolti aggiornamenti, riflessioni, progressi tecnici e scelte creative che definiscono l’identità del gioco.
-    </p>
+  <!-- SOTTO-MENU -->
+  <div class="submenu">
+    <a href="devlog.html" class="active">DEVLOG</a>
+    <a href="gamepage.html">GAME</a>
+    <a href="social.html">SOCIAL</a>
   </div>
 
-  <!-- ENTRY 2 -->
-  <div class="devlog-entry">
-    <h3>Costruzione dell’identità visiva</h3>
-    <div class="date">Giugno 2026</div>
-    <p>
-      L’estetica del progetto si consolida: atmosfera cinematografica, palette essenziale, simbolismo ricorrente e un linguaggio visivo coerente.  
-      Ogni elemento contribuisce a creare un mondo riconoscibile e carico di significato.
-    </p>
-  </div>
-
-  <!-- ENTRY 3 -->
-  <div class="devlog-entry">
-    <h3>Struttura narrativa e direzione emotiva</h3>
-    <div class="date">Giugno 2026</div>
-    <p>
-      La narrativa prende forma attraverso un percorso psicologico che accompagna il giocatore in un viaggio interiore.  
-      Il focus rimane sulla profondità emotiva, sul ritmo e sulla costruzione di momenti memorabili.
-    </p>
-  </div>
-
-  <p style="margin-top: 45px; font-weight: 600; letter-spacing: 0.03em; text-align:center;">
-    Ogni passo nello sviluppo è un tassello che avvicina il progetto alla sua forma definitiva.
+  <p>
+    Questo devlog raccoglie l’evoluzione del progetto nel tempo: decisioni tecniche, scelte estetiche,
+    cambi di direzione e momenti chiave dello sviluppo. Le voci sono organizzate per aree tematiche,
+    così da seguire facilmente i filoni principali del lavoro.
   </p>
+
+  <!-- CATEGORIA: REGIONE 4 -->
+  <div class="devlog-section">
+    <div class="devlog-section-title">Regione 4 — La Forgia del Furore</div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #12 · 2025-03-10</div>
+      <a href="devlog-12.html">
+        <div class="devlog-entry-title">Implementazione dei cassetti pesanti</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Logica dei cassetti leggeri, medi, pesanti e fondamentali, con micro‑cutscene e flashback mirati.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #13 · 2025-03-24</div>
+      <a href="devlog-13.html">
+        <div class="devlog-entry-title">Atmosfera del trailer della Regione 4</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Allineamento tra trailer e versione giocabile: grana, vignettatura, flicker e intensità emotiva.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #14 · 2025-04-02</div>
+      <a href="devlog-14.html">
+        <div class="devlog-entry-title">Micro‑cutscene e ritmo emotivo</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Gestione dei tempi brevi delle cutscene, respiro del protagonista e impatto psicologico sull’esplorazione.
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: ATMOSFERA & ILLUMINAZIONE -->
+  <div class="devlog-section">
+    <div class="devlog-section-title">Atmosfera & Illuminazione</div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #7 · 2024-11-05</div>
+      <a href="devlog-7.html">
+        <div class="devlog-entry-title">Grana, vignettatura e stabilità camera</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Definizione dei parametri visivi globali per mantenere coerenza tra trailer e gioco giocabile.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #8 · 2024-11-19</div>
+      <a href="devlog-8.html">
+        <div class="devlog-entry-title">Flicker, Gain e tensione visiva</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Uso controllato del flicker per aumentare la tensione senza compromettere la leggibilità della scena.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #9 · 2024-12-01</div>
+      <a href="devlog-9.html">
+        <div class="devlog-entry-title">Palette cromatica delle regioni</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Scelta dei colori chiave per ogni regione, in relazione allo stato emotivo del protagonista.
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: NARRATIVA & PSICOLOGIA -->
+  <div class="devlog-section">
+    <div class="devlog-section-title">Narrativa & Psicologia</div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #3 · 2024-08-10</div>
+      <a href="devlog-3.html">
+        <div class="devlog-entry-title">La Ferita Originaria</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Struttura della Regione 3, rottura con l’ex e collasso mentale come punto di non ritorno.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #4 · 2024-08-24</div>
+      <a href="devlog-4.html">
+        <div class="devlog-entry-title">Il vissuto pregresso con gli NPC</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Costruzione del passato condiviso con gli NPC per rendere credibile il cambiamento del protagonista.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #5 · 2024-09-05</div>
+      <a href="devlog-5.html">
+        <div class="devlog-entry-title">Progressione emotiva tra le regioni</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Dal Cuore Intatto alla Forgia del Furore: come cambia lo sguardo del protagonista sul mondo.
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: TECNICA & PERFORMANCE -->
+  <div class="devlog-section">
+    <div class="devlog-section-title">Tecnica & Performance</div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #1 · 2024-06-15</div>
+      <a href="devlog-1.html">
+        <div class="devlog-entry-title">Ottimizzazione e stabilità del progetto</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Pulizia della scena, gestione dei caricamenti e primi test di performance sulle regioni iniziali.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #2 · 2024-07-01</div>
+      <a href="devlog-2.html">
+        <div class="devlog-entry-title">Sistema di camera in terza persona</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Definizione del comportamento della camera per mantenere immersione e leggibilità.
+      </div>
+    </div>
+
+    <div class="devlog-entry">
+      <div class="devlog-entry-meta">Devlog #6 · 2024-09-20</div>
+      <a href="devlog-6.html">
+        <div class="devlog-entry-title">Input, controlli e feeling del movimento</div>
+      </a>
+      <div class="devlog-entry-desc">
+        Lavoro sul feeling del personaggio, reattività dei comandi e coerenza con il tono narrativo.
+      </div>
+    </div>
+  </div>
 
 </div>
 
