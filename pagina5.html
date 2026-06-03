@@ -7,26 +7,29 @@
 
 <style>
 
-/* Sfondo nero cinematografico */
+/* Sfondo nero */
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: #000;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
 /* Contenitore centrale */
-.fracture-container {
+.fracture-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  animation: fadeOut 1.4s ease-in forwards;
+  animation-delay: 4.2s; /* fade-out ritardato */
 }
 
-/* Fade-in iniziale */
+/* Fade-in iniziale dell’SVG */
 .fadein {
   opacity: 0;
   animation: fadeIn 1.2s ease-out forwards;
@@ -36,11 +39,7 @@ body {
   to { opacity: 1; }
 }
 
-/* Fade-out finale */
-.fadeout {
-  animation: fadeOut 1.4s ease-in forwards;
-}
-
+/* Fade-out finale del wrapper */
 @keyframes fadeOut {
   to { opacity: 0; }
 }
@@ -85,19 +84,13 @@ body {
 .p17 { animation-delay: 2040ms; }
 .p18 { animation-delay: 2160ms; }
 
-/* Fade-out automatico dell'intero SVG */
-.fracture {
-  animation: fadeOut 1.4s ease-in forwards;
-  animation-delay: 3.8s;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="fracture-container">
-  <svg class="fracture fadein" xmlns="http://www.w3.org/2000/svg" width="70vh" viewBox="-80 -80 160 160">
+<div class="fracture-wrapper">
+  <svg class="fadein" xmlns="http://www.w3.org/2000/svg" width="70vh" viewBox="-80 -80 160 160">
     <g fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round">
 
       <!-- Tratto principale -->
@@ -137,7 +130,7 @@ body {
 /* Redirect automatico alla Pagina 6 */
 setTimeout(() => {
   window.location.href = "pagina6.html";
-}, 5200);
+}, 5600); /* leggermente aumentato per sicurezza */
 </script>
 
 </body>
