@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Mondo – Arcidiacono Interactive</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+/* MENU FISSO */
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  gap: 22px;
+}
+
+.top-menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.top-menu a:hover {
+  opacity: 1;
+}
+
+/* Wrapper */
+.world-wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  line-height: 1.7;
+}
+
+/* TITOLI CENTRATI */
+.world-title,
+.world-subtitle {
+  text-align: center;
+}
+
+.world-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.world-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaaaaa;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Sezioni */
+.world-section {
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.world-section h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 8px;
+}
+
+.world-section p {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+/* Divider minimal */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: #444;
+  margin: 30px auto;
+  opacity: 0.4;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU FISSO -->
+<div class="top-menu">
+  <a href="about.html">ABOUT</a>
+  <a href="team.html">TEAM</a>
+  <a href="presskit.html">PRESS KIT</a>
+  <a href="devlog.html">DEVLOG</a>
+  <a href="roadmap.html">ROADMAP</a>
+  <a href="social.html">SOCIAL HUB</a>
+  <a href="legal.html">LEGAL</a>
+</div>
+
+<div class="world-wrapper">
+
+  <div class="world-title">IL MONDO</div>
+  <div class="world-subtitle">Sette regioni, un’unica ferita</div>
+
+  <div class="world-section">
+    <h3>Un viaggio interiore</h3>
+    <p>
+      Il mondo del gioco non è un luogo fisico.  
+      È una mappa emotiva, un territorio costruito dalle memorie, dalle pressioni e dalle fratture del protagonista.  
+      Ogni regione rappresenta un diverso stato interiore, un frammento della sua storia che prende forma nello spazio.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="world-section">
+    <h3>Le Sette Regioni</h3>
+    <p>
+      Il viaggio attraversa sette regioni simboliche, ognuna con un’identità visiva e narrativa unica.  
+      Dal cuore intatto alla frattura finale, ogni luogo è un passo più vicino alla verità che il protagonista ha evitato per anni.
+    </p>
+    <p>
+      Le regioni non sono livelli.  
+      Sono stati d’animo.  
+      Sono ferite che respirano.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="world-section">
+    <h3>La Regione 4</h3>
+    <p>
+      La <strong>Forgia del Furore</strong> è il punto di rottura.  
+      Un luogo claustrofobico, compresso, dove ogni cassetto aperto rivela un frammento del passato che il protagonista ha cercato di seppellire.  
+      È una regione che non si attraversa: si sopporta.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="world-section">
+    <h3>Simbolismo</h3>
+    <p>
+      Nulla è letterale.  
+      Ogni ambiente, ogni oggetto, ogni luce è un simbolo.  
+      Il mondo non racconta: suggerisce.  
+      Non spiega: evoca.  
+      Non mostra: lascia intuire.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
