@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap – Arcidiacono Interactive</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+/* MENU FISSO */
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  gap: 22px;
+}
+
+.top-menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.top-menu a:hover {
+  opacity: 1;
+}
+
+/* Wrapper */
+.roadmap-wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  line-height: 1.7;
+}
+
+/* TITOLI CENTRATI */
+.roadmap-title,
+.roadmap-subtitle {
+  text-align: center;
+}
+
+.roadmap-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.roadmap-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #aaaaaa;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Sezioni */
+.roadmap-section {
+  margin-top: 50px;
+  padding-bottom: 30px;
+  border-left: 2px solid #333;
+  padding-left: 20px;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.roadmap-section h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 8px;
+}
+
+.roadmap-section .period {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU FISSO -->
+<div class="top-menu">
+  <a href="about.html">ABOUT</a>
+  <a href="team.html">TEAM</a>
+  <a href="presskit.html">PRESS KIT</a>
+  <a href="devlog.html">DEVLOG</a>
+  <a href="roadmap.html">ROADMAP</a>
+  <a href="social.html">SOCIAL HUB</a>
+  <a href="legal.html">LEGAL</a>
+</div>
+
+<div class="roadmap-wrapper">
+
+  <div class="roadmap-title">ROADMAP</div>
+  <div class="roadmap-subtitle">Percorso di sviluppo</div>
+
+  <!-- FASE 1 -->
+  <div class="roadmap-section">
+    <h3>Fase 1 — Fondamenta del progetto</h3>
+    <div class="period">Completata</div>
+    <p>
+      Definizione della visione narrativa, estetica e simbolica del progetto.  
+      Creazione delle prime scene, sperimentazioni tecniche e consolidamento dell’identità visiva dello studio.
+    </p>
+  </div>
+
+  <!-- FASE 2 -->
+  <div class="roadmap-section">
+    <h3>Fase 2 — Sviluppo delle regioni principali</h3>
+    <div class="period">In corso</div>
+    <p>
+      Costruzione delle regioni narrative, implementazione delle logiche di gameplay e rifinitura dell’atmosfera.  
+      Focus attuale sulla Regione 4 e sulla coerenza con il trailer cinematografico.
+    </p>
+  </div>
+
+  <!-- FASE 3 -->
+  <div class="roadmap-section">
+    <h3>Fase 3 — Trailer e materiali ufficiali</h3>
+    <div class="period">In arrivo</div>
+    <p>
+      Preparazione del trailer principale, materiali stampa, screenshot ufficiali e contenuti per la presentazione pubblica del progetto.
+    </p>
+  </div>
+
+  <!-- FASE 4 -->
+  <div class="roadmap-section">
+    <h3>Fase 4 — Versione giocabile</h3>
+    <div class="period">In arrivo</div>
+    <p>
+      Creazione della prima build giocabile, test interni, ottimizzazioni e rifiniture tecniche.  
+      Obiettivo: una versione stabile che rispecchi l’identità emotiva del progetto.
+    </p>
+  </div>
+
+  <!-- FASE 5 -->
+  <div class="roadmap-section">
+    <h3>Fase 5 — Preparazione al lancio</h3>
+    <div class="period">In arrivo</div>
+    <p>
+      Finalizzazione del gioco, QA, polishing, distribuzione dei materiali ufficiali e pianificazione della pubblicazione.
+    </p>
+  </div>
+
+  <p style="margin-top: 45px; font-weight: 600; letter-spacing: 0.03em; text-align:center;">
+    Ogni fase è un passo verso un’esperienza che vuole lasciare un segno.
+  </p>
+
+</div>
+
+</body>
+</html>
