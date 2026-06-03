@@ -7,16 +7,26 @@
 
 <style>
 
-/* Contenitore */
+/* Sfondo nero cinematografico */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Contenitore centrale */
 .fracture-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Fade-in iniziale della frattura */
+/* Fade-in iniziale */
 .fadein {
   opacity: 0;
   animation: fadeIn 1.2s ease-out forwards;
@@ -26,7 +36,7 @@
   to { opacity: 1; }
 }
 
-/* Fade-out finale della frattura */
+/* Fade-out finale */
 .fadeout {
   animation: fadeOut 1.4s ease-in forwards;
 }
@@ -47,14 +57,14 @@
   to { stroke-dashoffset: 0; }
 }
 
-/* Glow rosso a pulsazione lenta */
+/* Glow rosso pulsante */
 @keyframes glowPulse {
   0%   { filter: drop-shadow(0 0 3px #ff0000); }
   50%  { filter: drop-shadow(0 0 9px #ff2a2a); }
   100% { filter: drop-shadow(0 0 3px #ff0000); }
 }
 
-/* Delay progressivo ramo-per-ramo */
+/* Delay ramo-per-ramo */
 .p0 { animation-delay: 0ms; }
 .p1 { animation-delay: 120ms; }
 .p2 { animation-delay: 240ms; }
@@ -75,10 +85,10 @@
 .p17 { animation-delay: 2040ms; }
 .p18 { animation-delay: 2160ms; }
 
-/* Attivazione automatica del fade-out dopo l’animazione completa */
+/* Fade-out automatico dell'intero SVG */
 .fracture {
   animation: fadeOut 1.4s ease-in forwards;
-  animation-delay: 3.8s; /* tempo totale del disegno + glow */
+  animation-delay: 3.8s;
 }
 
 </style>
@@ -87,7 +97,7 @@
 <body>
 
 <div class="fracture-container">
-  <svg class="fracture fadein" xmlns="http://www.w3.org/2000/svg" viewBox="-80 -80 160 160">
+  <svg class="fracture fadein" xmlns="http://www.w3.org/2000/svg" width="70vh" viewBox="-80 -80 160 160">
     <g fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round">
 
       <!-- Tratto principale -->
@@ -124,10 +134,10 @@
 </div>
 
 <script>
-/* Quando il fade-out finisce → vai alla Pagina 6 */
+/* Redirect automatico alla Pagina 6 */
 setTimeout(() => {
-  window.location.href = "pagina6.html"; 
-}, 5200); 
+  window.location.href = "pagina6.html";
+}, 5200);
 </script>
 
 </body>
