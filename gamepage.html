@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Il Gioco – Arcidiacono Interactive</title>
+<title>Game – Arcidiacono Interactive</title>
 
 <style>
 body {
@@ -36,7 +36,7 @@ body::after {
   z-index: 2;
 }
 
-/* MENU FISSO */
+/* MENU PRINCIPALE */
 .top-menu {
   position: fixed;
   top: 20px;
@@ -60,78 +60,129 @@ body::after {
   opacity: 1;
 }
 
+/* Evita il viola dei link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
 /* Wrapper */
 .game-wrapper {
   position: relative;
   z-index: 3;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
+  max-width: 1000px;
+  margin: 120px auto 80px;
+  padding: 0 20px;
   line-height: 1.7;
 }
 
-/* TITOLI CENTRATI */
-.game-title,
-.game-subtitle {
-  text-align: center;
-}
-
+/* Titoli */
 .game-title {
-  font-size: 1.4rem;
-  letter-spacing: 0.18em;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .game-subtitle {
+  text-align: center;
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
+  margin-bottom: 30px;
+}
+
+/* SOTTO-MENU */
+.submenu {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.submenu a:hover {
+  opacity: 1;
+}
+
+.submenu .active {
+  opacity: 1;
 }
 
 /* Sezioni */
-.game-section {
-  margin-top: 50px;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
+.section {
+  margin-bottom: 40px;
 }
 
-.game-section h3 {
-  font-size: 1rem;
+.section-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 8px;
+  color: #dddddd;
+  margin-bottom: 10px;
+  border-left: 2px solid #ffffff;
+  padding-left: 10px;
 }
 
-.game-section p {
-  color: #cccccc;
+.section-text {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+}
+
+/* Pillars */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.pillar {
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 14px 16px;
+  background: rgba(10,10,10,0.7);
+}
+
+.pillar-title {
   font-size: 0.9rem;
-}
-
-/* Screenshot placeholder */
-.screenshot-box {
-  width: 100%;
-  height: 260px;
-  background: #111;
-  border: 1px solid #333;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  color: #777;
+  margin-bottom: 6px;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.pillar-text {
+  font-size: 0.9rem;
+  color: #c8c8c8;
+}
+
+/* Regions list */
+.regions-list {
+  margin-top: 12px;
+}
+
+.region-item {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+}
+
+/* Call to action */
+.cta {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #bbbbbb;
 }
 </style>
 </head>
@@ -148,45 +199,97 @@ body::after {
 
 <div class="game-wrapper">
 
-  <div class="game-title">IL GIOCO</div>
-  <div class="game-subtitle">Un viaggio dentro la frattura</div>
+  <div class="game-title">THE GAME</div>
+  <div class="game-subtitle">ARCIDIACONO INTERACTIVE</div>
 
-  <div class="game-section">
-    <h3>Tagline</h3>
-    <p>
-      Un’esperienza narrativa psicologica che attraversa sette regioni interiori, ognuna più profonda della precedente.
-    </p>
+  <!-- SOTTO-MENU -->
+  <div class="submenu">
+    <a href="gamepage.html" class="active">GAME</a>
+    <a href="roadmap.html">ROADMAP</a>
+    <a href="devlog.html">DEVLOG</a>
+    <a href="social.html">SOCIAL</a>
   </div>
 
-  <div class="game-section">
-    <h3>Descrizione</h3>
-    <p>
-      Il protagonista intraprende un viaggio simbolico attraverso le proprie ferite emotive, esplorando luoghi che 
-      rappresentano stati interiori, memorie, pressioni e crolli. Ogni regione è un frammento della sua psiche, 
-      un ambiente vivo che reagisce al suo cambiamento.
-    </p>
+  <!-- INTRO IBRIDA -->
+  <div class="section">
+    <div class="section-title">Visione</div>
+    <div class="section-text">
+      Un’esperienza narrativa in terza persona che esplora le crepe dell’identità, attraverso regioni
+      interiori che riflettono stati emotivi estremi. Ogni ambiente è costruito come un frammento di
+      memoria, un luogo sospeso tra ciò che è successo e ciò che il protagonista non riesce più a
+      raccontarsi con sincerità.
+    </div>
   </div>
 
-  <div class="game-section">
-    <h3>Le Regioni</h3>
-    <p>
-      Il mondo è diviso in sette regioni, ognuna con un’identità visiva e simbolica unica.  
-      La <strong>Regione 4</strong>, già in sviluppo avanzato, rappresenta il punto di rottura: 
-      un luogo claustrofobico, carico di pressione emotiva, dove ogni cassetto aperto rivela un frammento del passato.
-    </p>
+  <!-- PILLARS -->
+  <div class="section">
+    <div class="section-title">Pilastri dell’esperienza</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-title">Narrativa psicologica</div>
+        <div class="pillar-text">
+          La storia non viene solo raccontata: emerge da dettagli, silenzi, ambienti e piccoli gesti.
+          Il giocatore ricostruisce il quadro emotivo pezzo dopo pezzo, senza spiegazioni didascaliche.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Spazi come stati d’animo</div>
+        <div class="pillar-text">
+          Ogni regione rappresenta una fase diversa del percorso interiore del protagonista. Luci,
+          suoni e ritmo di gioco cambiano per riflettere il suo modo di percepire il mondo.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Scelte sottili</div>
+        <div class="pillar-text">
+          Non esistono menu di scelte esplicite: sono i comportamenti, le esitazioni e le azioni
+          ripetute a definire il modo in cui il gioco risponde al giocatore.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Tono cinematografico</div>
+        <div class="pillar-text">
+          Inquadrature stabili, ritmo controllato e momenti di sospensione costruiscono un’esperienza
+          che vuole sembrare più un ricordo vissuto che un semplice livello da completare.
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="game-section">
-    <h3>Atmosfera</h3>
-    <p>
-      Un’estetica cinematografica, minimalista, con grana, vignettatura e luce controllata.  
-      Il mondo non è solo da esplorare: è da interpretare.
-    </p>
+  <!-- REGIONI (OVERVIEW NON SPOILER) -->
+  <div class="section">
+    <div class="section-title">Le regioni interiori</div>
+    <div class="section-text">
+      Il viaggio del protagonista è scandito da regioni simboliche, ognuna legata a un diverso modo
+      di proteggersi, crollare o reagire. I nomi non descrivono luoghi fisici, ma stati emotivi che
+      prendono forma concreta.
+    </div>
+    <div class="regions-list">
+      <div class="region-item">1) Il Cuore Intatto — la superficie ancora controllata, dove tutto sembra reggere.</div>
+      <div class="region-item">2) L’Eco dei Giorni Felici — ciò che resta di un passato idealizzato.</div>
+      <div class="region-item">3) La Ferita Originaria — il punto in cui le difese iniziano a cedere.</div>
+      <div class="region-item">4) La Forgia del Furore — l’energia compressa che cerca una via d’uscita.</div>
+      <div class="region-item">5) Il Corridoio del Silenzio — il distacco, il rumore interno che si spegne.</div>
+      <div class="region-item">6) Il Tribunale Interiore — il giudizio, la colpa, l’autosabotaggio.</div>
+      <div class="region-item">7) La Frattura del Sé — il momento in cui non è più possibile tornare come prima.</div>
+    </div>
   </div>
 
-  <div class="game-section">
-    <h3>Screenshot</h3>
-    <div class="screenshot-box">IMMAGINE IN ARRIVO</div>
+  <!-- GAMEPLAY FEEL -->
+  <div class="section">
+    <div class="section-title">Gameplay & tono</div>
+    <div class="section-text">
+      Il gioco è in terza persona, con un ritmo lento e intenzionale. L’esplorazione, le micro‑cutscene
+      e le interazioni con gli oggetti chiave servono a far emergere il peso emotivo delle scelte
+      passate del protagonista, senza mai trasformare il dolore in spettacolo.
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section cta">
+    Per approfondire lo sviluppo e la direzione del progetto, puoi seguire la
+    <a href="roadmap.html">Roadmap</a> oppure leggere i dietro le quinte nel
+    <a href="devlog.html">Devlog</a>.
   </div>
 
 </div>
