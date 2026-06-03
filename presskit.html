@@ -36,7 +36,7 @@ body::after {
   z-index: 2;
 }
 
-/* MENU FISSO MINIMAL */
+/* MENU PRINCIPALE */
 .top-menu {
   position: fixed;
   top: 20px;
@@ -60,77 +60,82 @@ body::after {
   opacity: 1;
 }
 
+/* Evita il viola dei link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
 /* Wrapper */
 .press-wrapper {
   position: relative;
   z-index: 3;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
   line-height: 1.7;
 }
 
-/* TITOLI CENTRATI */
-.press-title,
-.press-subtitle {
-  text-align: center;
-}
-
+/* Titoli */
 .press-title {
+  text-align: center;
   font-size: 1.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .press-subtitle {
+  text-align: center;
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Sezioni */
-.press-section-title {
-  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #ffffff;
+  color: #aaaaaa;
+  margin-bottom: 30px;
+}
+
+/* SOTTO-MENU CONTESTUALE */
+.submenu {
   margin-top: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.75;
 }
 
-.press-content {
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.download-box {
-  margin-top: 20px;
-  padding: 18px;
-  border: 1px solid #333;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.03);
-}
-
-.download-box a {
+.submenu a {
+  text-decoration: none;
   color: #ffffff;
-  text-decoration: underline;
-  opacity: 0.8;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
 }
 
-.download-box a:hover {
+.submenu a:hover {
   opacity: 1;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.submenu .active {
+  opacity: 1;
+}
+
+/* Sezioni */
+.section-title {
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.section-line {
+  width: 60px;
+  height: 2px;
+  background: #ffffff;
+  margin-bottom: 25px;
 }
 </style>
 </head>
@@ -148,43 +153,67 @@ body::after {
 <div class="press-wrapper">
 
   <div class="press-title">PRESS KIT</div>
-  <div class="press-subtitle">Materiale ufficiale</div>
+  <div class="press-subtitle">ARCIDIACONO INTERACTIVE</div>
 
-  <div class="press-content">
-
-    <div class="press-section-title">Descrizione breve</div>
-    <p>
-      Arcidiacono Interactive è uno studio d’autore dedicato alla creazione di esperienze narrative e psicologiche ad alto impatto emotivo.  
-      Ogni progetto nasce da una visione personale e da un linguaggio simbolico che parla direttamente al giocatore.
-    </p>
-
-    <div class="press-section-title">Descrizione estesa</div>
-    <p>
-      Lo studio si concentra su atmosfere cinematografiche, storytelling emotivo e un design essenziale ma ricco di significato.  
-      L’obiettivo è creare mondi che non si limitino a essere giocati, ma che vengano vissuti, interpretati e ricordati.
-    </p>
-
-    <div class="press-section-title">Logo & Branding</div>
-    <div class="download-box">
-      <p>Scarica il materiale ufficiale:</p>
-      <p>
-        • <a href="AI_logotipo_ArcidiaconoInteractive.png" download>Logo PNG</a><br>
-        • <a href="arcidiacono-fracture.svg" download>Logo SVG</a>
-      </p>
-    </div>
-
-    <div class="press-section-title">Contatti ufficiali</div>
-    <p>
-      Per richieste stampa, interviste o collaborazioni:<br>
-      <strong>arcidiacono.interactive@gmail.com</strong>
-    </p>
-
-    <p style="margin-top: 35px; font-weight: 600; letter-spacing: 0.03em; text-align:center;">
-      Ogni storia che raccontiamo nasce da un’emozione.  
-      Ogni emozione merita di essere condivisa.
-    </p>
-
+  <!-- SOTTO-MENU -->
+  <div class="submenu">
+    <a href="about.html">ABOUT</a>
+    <a href="team.html">TEAM</a>
+    <a href="presskit.html" class="active">PRESS KIT</a>
+    <a href="legal.html">LEGAL</a>
   </div>
+
+  <!-- SEZIONE 1 — LOGO -->
+  <div class="section-title">Logo Ufficiale</div>
+  <div class="section-line"></div>
+  <p>Versioni disponibili:</p>
+  <ul>
+    <li><a href="arcidiacono-fracture.svg" download>Logo SVG (vettoriale)</a></li>
+    <li><a href="arcidiacono-fracture.png" download>Logo PNG (trasparente)</a></li>
+  </ul>
+
+  <!-- SEZIONE 2 — KEY ART / SCREENSHOT -->
+  <div class="section-title">Key Art & Screenshot</div>
+  <div class="section-line"></div>
+  <p>Materiale visivo del progetto (placeholder per ora):</p>
+  <ul>
+    <li><a href="#">Key Art 01</a></li>
+    <li><a href="#">Key Art 02</a></li>
+    <li><a href="#">Screenshot 01</a></li>
+    <li><a href="#">Screenshot 02</a></li>
+  </ul>
+
+  <!-- SEZIONE 3 — DESCRIZIONE BREVE -->
+  <div class="section-title">Descrizione Breve</div>
+  <div class="section-line"></div>
+  <p><em>“Dopo la crepa, segue sempre una rinascita.”</em></p>
+
+  <!-- SEZIONE 4 — DESCRIZIONE LUNGA -->
+  <div class="section-title">Descrizione Completa</div>
+  <div class="section-line"></div>
+  <p>Il progetto di Arcidiacono Interactive nasce come esperienza narrativa e psicologica ad alto impatto emotivo. Ogni scena, ogni silenzio, ogni dettaglio è costruito per accompagnare il giocatore in un viaggio interiore, dove atmosfera, simbolismo e ritmo diventano linguaggio.</p>
+
+  <!-- SEZIONE 5 — INFO GIOCO -->
+  <div class="section-title">Informazioni sul Gioco</div>
+  <div class="section-line"></div>
+  <ul>
+    <li>Genere: Esperienza narrativa psicologica</li>
+    <li>Piattaforma: PC (Steam) — altre TBD</li>
+    <li>Stato: In sviluppo</li>
+    <li>Data prevista: TBD</li>
+    <li>Lingue: Italiano, Inglese</li>
+    <li>Target: Giocatori interessati a narrativa, atmosfera e introspezione</li>
+  </ul>
+
+  <!-- SEZIONE 6 — INFO STUDIO -->
+  <div class="section-title">Informazioni sullo Studio</div>
+  <div class="section-line"></div>
+  <p>Arcidiacono Interactive è uno studio d’autore dedicato alla creazione di esperienze narrative e psicologiche. Ogni progetto nasce da una visione chiara, da un’emozione che merita spazio, forma e ritmo.</p>
+
+  <!-- SEZIONE 7 — CONTATTI -->
+  <div class="section-title">Contatti</div>
+  <div class="section-line"></div>
+  <p>Email ufficiale: <strong>arcidiacono.interactive@gmail.com</strong></p>
 
 </div>
 
