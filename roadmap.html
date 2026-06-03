@@ -36,7 +36,7 @@ body::after {
   z-index: 2;
 }
 
-/* MENU FISSO */
+/* MENU PRINCIPALE */
 .top-menu {
   position: fixed;
   top: 20px;
@@ -60,67 +60,100 @@ body::after {
   opacity: 1;
 }
 
+/* Evita il viola dei link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
 /* Wrapper */
 .roadmap-wrapper {
   position: relative;
   z-index: 3;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
   line-height: 1.7;
 }
 
-/* TITOLI CENTRATI */
-.roadmap-title,
-.roadmap-subtitle {
-  text-align: center;
-}
-
+/* Titoli */
 .roadmap-title {
+  text-align: center;
   font-size: 1.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .roadmap-subtitle {
+  text-align: center;
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Sezioni */
-.roadmap-section {
-  margin-top: 50px;
-  padding-bottom: 30px;
-  border-left: 2px solid #333;
-  padding-left: 20px;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.roadmap-section h3 {
-  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 8px;
+  color: #aaaaaa;
+  margin-bottom: 30px;
 }
 
-.roadmap-section .period {
+/* SOTTO-MENU */
+.submenu {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
   font-size: 0.8rem;
-  color: #888;
-  margin-bottom: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.75;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.submenu a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.submenu a:hover {
+  opacity: 1;
+}
+
+.submenu .active {
+  opacity: 1;
+}
+
+/* Timeline */
+.timeline {
+  margin-top: 50px;
+  border-left: 2px solid #ffffff;
+  padding-left: 25px;
+}
+
+.milestone {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.milestone::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.milestone-title {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.milestone-text {
+  font-size: 0.95rem;
+  color: #cccccc;
 }
 </style>
 </head>
@@ -138,59 +171,67 @@ body::after {
 <div class="roadmap-wrapper">
 
   <div class="roadmap-title">ROADMAP</div>
-  <div class="roadmap-subtitle">Percorso di sviluppo</div>
+  <div class="roadmap-subtitle">ARCIDIACONO INTERACTIVE</div>
 
-  <!-- FASE 1 -->
-  <div class="roadmap-section">
-    <h3>Fase 1 — Fondamenta del progetto</h3>
-    <div class="period">Completata</div>
-    <p>
-      Definizione della visione narrativa, estetica e simbolica del progetto.  
-      Creazione delle prime scene, sperimentazioni tecniche e consolidamento dell’identità visiva dello studio.
-    </p>
+  <!-- SOTTO-MENU -->
+  <div class="submenu">
+    <a href="gamepage.html">GAME</a>
+    <a href="roadmap.html" class="active">ROADMAP</a>
+    <a href="devlog.html">DEVLOG</a>
+    <a href="social.html">SOCIAL</a>
   </div>
 
-  <!-- FASE 2 -->
-  <div class="roadmap-section">
-    <h3>Fase 2 — Sviluppo delle regioni principali</h3>
-    <div class="period">In corso</div>
-    <p>
-      Costruzione delle regioni narrative, implementazione delle logiche di gameplay e rifinitura dell’atmosfera.  
-      Focus attuale sulla Regione 4 e sulla coerenza con il trailer cinematografico.
-    </p>
-  </div>
+  <p>La roadmap rappresenta la visione evolutiva del progetto. Le date sono indicative e possono variare in base alle necessità creative e tecniche.</p>
 
-  <!-- FASE 3 -->
-  <div class="roadmap-section">
-    <h3>Fase 3 — Trailer e materiali ufficiali</h3>
-    <div class="period">In arrivo</div>
-    <p>
-      Preparazione del trailer principale, materiali stampa, screenshot ufficiali e contenuti per la presentazione pubblica del progetto.
-    </p>
-  </div>
+  <!-- TIMELINE -->
+  <div class="timeline">
 
-  <!-- FASE 4 -->
-  <div class="roadmap-section">
-    <h3>Fase 4 — Versione giocabile</h3>
-    <div class="period">In arrivo</div>
-    <p>
-      Creazione della prima build giocabile, test interni, ottimizzazioni e rifiniture tecniche.  
-      Obiettivo: una versione stabile che rispecchi l’identità emotiva del progetto.
-    </p>
-  </div>
+    <div class="milestone">
+      <div class="milestone-title">Q1 2024 — Concept & Visione</div>
+      <div class="milestone-text">Definizione del tono, dei temi psicologici e della struttura narrativa generale.</div>
+    </div>
 
-  <!-- FASE 5 -->
-  <div class="roadmap-section">
-    <h3>Fase 5 — Preparazione al lancio</h3>
-    <div class="period">In arrivo</div>
-    <p>
-      Finalizzazione del gioco, QA, polishing, distribuzione dei materiali ufficiali e pianificazione della pubblicazione.
-    </p>
-  </div>
+    <div class="milestone">
+      <div class="milestone-title">Q2 2024 — Regione 1: Il Cuore Intatto</div>
+      <div class="milestone-text">Prototipo iniziale, primi test di atmosfera e illuminazione.</div>
+    </div>
 
-  <p style="margin-top: 45px; font-weight: 600; letter-spacing: 0.03em; text-align:center;">
-    Ogni fase è un passo verso un’esperienza che vuole lasciare un segno.
-  </p>
+    <div class="milestone">
+      <div class="milestone-title">Q3 2024 — Regione 2: L’Eco dei Giorni Felici</div>
+      <div class="milestone-text">Espansione narrativa, primi elementi simbolici e micro‑cutscene.</div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-title">Q4 2024 — Regione 3: La Ferita Originaria</div>
+      <div class="milestone-text">Cutscene della rottura, collasso emotivo, struttura della depressione simbolica.</div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-title">Q1 2025 — Regione 4: La Forgia del Furore</div>
+      <div class="milestone-text">Implementazione dei cassetti, micro‑cutscene, atmosfera del trailer.</div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-title">Q2 2025 — Vertical Slice</div>
+      <div class="milestone-text">Prima versione giocabile completa e coerente.</div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-title">Q3 2025 — Trailer Cinematografico</div>
+      <div class="milestone-text">Montaggio, sound design, presentazione ufficiale.</div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-title">Q4 2025 — Steam Page + Demo</div>
+      <div class="milestone-text">Pubblicazione della pagina Steam e rilascio della demo pubblica.</div>
+    </div>
+
+    <div class="milestone">
+      <div class="milestone-title">TBD — Release</div>
+      <div class="milestone-text">Lancio ufficiale del progetto.</div>
+    </div>
+
+  </div>
 
 </div>
 
