@@ -1,200 +1,185 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Il Mondo – Arcidiacono Interactive</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World – Arcidiacono Interactive</title>
 
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  color: #f5f5f5;
-  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow-x: hidden;
-}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #f5f5f5;
+            font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-/* Grana */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  opacity: 0.10;
-  z-index: 1;
-}
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 80px auto;
+        }
 
-/* Vignettatura */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
-  z-index: 2;
-}
+        h1, h2, h3 {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* MENU FISSO */
-.top-menu {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  z-index: 9999;
-  display: flex;
-  gap: 22px;
-}
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
 
-.top-menu a {
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #ffffff;
-  opacity: 0.55;
-  text-decoration: none;
-  transition: opacity 0.25s ease;
-}
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 60px;
+            margin-bottom: 15px;
+            color: #d62828;
+        }
 
-.top-menu a:hover {
-  opacity: 1;
-}
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            color: #ff3b3b;
+        }
 
-/* Wrapper */
-.world-wrapper {
-  position: relative;
-  z-index: 3;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
-  line-height: 1.7;
-}
+        p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            opacity: 0.92;
+        }
 
-/* TITOLI CENTRATI */
-.world-title,
-.world-subtitle {
-  text-align: center;
-}
+        .region-block {
+            margin-bottom: 35px;
+            padding-left: 10px;
+            border-left: 2px solid #d62828;
+        }
 
-.world-title {
-  font-size: 1.4rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-}
+        .symbol-list li {
+            margin-bottom: 10px;
+        }
 
-.world-subtitle {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #aaaaaa;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Sezioni */
-.world-section {
-  margin-top: 50px;
-  opacity: 0;
-  animation: fadeIn 1.4s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.world-section h3 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 8px;
-}
-
-.world-section p {
-  color: #cccccc;
-  font-size: 0.9rem;
-}
-
-/* Divider minimal */
-.divider {
-  width: 60px;
-  height: 1px;
-  background: #444;
-  margin: 30px auto;
-  opacity: 0.4;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-</style>
+        ul {
+            padding-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- MENU PRINCIPALE -->
-<div class="top-menu">
-  <a href="about.html">ABOUT</a>
-  <a href="gamepage.html">GAME</a>
-  <a href="devlog.html">DEVLOG</a>
-  <a href="social.html">SOCIAL</a>
-</div>
+<div class="container">
 
-<div class="world-wrapper">
+    <h1>Il Mondo Interiore</h1>
 
-  <div class="world-title">IL MONDO</div>
-  <div class="world-subtitle">Sette regioni, un’unica ferita</div>
+    <p><strong>Ogni persona custodisce un mondo che nessuno vede.<br>
+    Il nostro protagonista lo attraversa, regione dopo regione,<br>
+    per ricostruire ciò che è stato spezzato.</strong></p>
 
-  <div class="world-section">
-    <h3>Un viaggio interiore</h3>
-    <p>
-      Il mondo del gioco non è un luogo fisico.  
-      È una mappa emotiva, un territorio costruito dalle memorie, dalle pressioni e dalle fratture del protagonista.  
-      Ogni regione rappresenta un diverso stato interiore, un frammento della sua storia che prende forma nello spazio.
-    </p>
-  </div>
+    <p>Un viaggio che non segue mappe, ma ferite.<br>
+    Non cerca risposte: cerca il coraggio di guardarle.</p>
 
-  <div class="divider"></div>
 
-  <div class="world-section">
-    <h3>Le Sette Regioni</h3>
-    <p>
-      Il viaggio attraversa sette regioni simboliche, ognuna con un’identità visiva e narrativa unica.  
-      Dal cuore intatto alla frattura finale, ogni luogo è un passo più vicino alla verità che il protagonista ha evitato per anni.
-    </p>
-    <p>
-      Le regioni non sono livelli.  
-      Sono stati d’animo.  
-      Sono ferite che respirano.
-    </p>
-  </div>
+    <h2>Le Sette Regioni</h2>
+    <p>Un mondo che non esiste fuori, ma <em>dentro</em>.<br>
+    Ogni regione è uno stato emotivo, una distorsione, un ricordo che non vuole essere ricordato.<br>
+    Non sono luoghi: sono verità che prendono forma.</p>
 
-  <div class="divider"></div>
+    <div class="region-block">
+        <h3>1. Il Cuore Intatto</h3>
+        <p>La calma prima della crepa. Un luogo che non sa ancora di essere fragile.</p>
+    </div>
 
-  <div class="world-section">
-    <h3>La Regione 4</h3>
-    <p>
-      La <strong>Forgia del Furore</strong> è il punto di rottura.  
-      Un luogo claustrofobico, compresso, dove ogni cassetto aperto rivela un frammento del passato che il protagonista ha cercato di seppellire.  
-      È una regione che non si attraversa: si sopporta.
-    </p>
-  </div>
+    <div class="region-block">
+        <h3>2. L’Eco dei Giorni Felici</h3>
+        <p>La memoria che addolcisce tutto… anche ciò che non dovrebbe. Un riflesso che non coincide più con la realtà.</p>
+    </div>
 
-  <div class="divider"></div>
+    <div class="region-block">
+        <h3>3. La Ferita Originaria</h3>
+        <p>Il punto in cui tutto cede. Non è dolore: è consapevolezza.</p>
+    </div>
 
-  <div class="world-section">
-    <h3>Simbolismo</h3>
-    <p>
-      Nulla è letterale.  
-      Ogni ambiente, ogni oggetto, ogni luce è un simbolo.  
-      Il mondo non racconta: suggerisce.  
-      Non spiega: evoca.  
-      Non mostra: lascia intuire.
-    </p>
-  </div>
+    <div class="region-block">
+        <h3>4. La Forgia del Furore</h3>
+        <p>La rabbia che nasce quando non resta altro da proteggere. Calda, viva, necessaria.</p>
+    </div>
+
+    <div class="region-block">
+        <h3>5. Il Corridoio del Silenzio</h3>
+        <p>Il mondo che si spegne per non sentire. Un passo dopo l’altro, senza rumore.</p>
+    </div>
+
+    <div class="region-block">
+        <h3>6. Il Tribunale Interiore</h3>
+        <p>La voce che giudica, accusa, pretende. Non è un nemico: è la parte che non sa perdonare.</p>
+    </div>
+
+    <div class="region-block">
+        <h3>7. La Frattura del Sé</h3>
+        <p>Il punto più profondo. Non distrugge: divide. E nella divisione, qualcosa cambia per sempre.</p>
+    </div>
+
+
+    <h2>Filosofia del Mondo</h2>
+    <p>Questo mondo non è costruito: è <em>emerso</em>.<br>
+    È la forma che prende la mente quando smette di difendersi.</p>
+
+    <p>Ogni regione reagisce al protagonista.<br>
+    Si espande, si contrae, si oscura, si illumina.<br>
+    Non per magia, ma per coerenza emotiva.</p>
+
+    <p>Non è un viaggio per trovare qualcuno.<br>
+    È un viaggio per smettere di perdersi.</p>
+
+
+    <h2>Timeline Emotiva</h2>
+    <ul>
+        <li><strong>Stabilità</strong> → ciò che era intero</li>
+        <li><strong>Nostalgia</strong> → ciò che sembrava perfetto</li>
+        <li><strong>Crollo</strong> → ciò che non regge più</li>
+        <li><strong>Rabbia</strong> → ciò che brucia</li>
+        <li><strong>Silenzio</strong> → ciò che resta</li>
+        <li><strong>Giudizio</strong> → ciò che pesa</li>
+        <li><strong>Frattura</strong> → ciò che finalmente si vede</li>
+    </ul>
+
+    <p>Ogni regione prepara la successiva.<br>
+    Ogni passo è una scelta, anche quando non sembra.</p>
+
+
+    <h2>Simboli Ricorrenti</h2>
+    <ul class="symbol-list">
+        <li>cassetti che non si aprono allo stesso modo</li>
+        <li>luci che non illuminano, ma rivelano</li>
+        <li>grana che aumenta quando la mente vacilla</li>
+        <li>vignettatura che stringe quando il respiro manca</li>
+        <li>ombre che non seguono sempre il corpo</li>
+    </ul>
+
+    <p>Niente è casuale.<br>
+    Ogni elemento è un frammento di qualcosa che il protagonista non vuole più ignorare.</p>
+
+
+    <h2>Collegamento al Gameplay</h2>
+    <p>Il mondo non è un semplice scenario: è un personaggio.</p>
+
+    <ul>
+        <li>reagisce allo stato emotivo del protagonista</li>
+        <li>cambia dopo ogni interazione significativa</li>
+        <li>modifica la percezione degli NPC</li>
+        <li>altera la luce, il suono, la distanza</li>
+        <li>amplifica ciò che il protagonista non vuole affrontare</li>
+    </ul>
+
+    <p>Non è un viaggio per “vincere”.<br>
+    È un viaggio per capire cosa significa <em>andare avanti</em>.</p>
 
 </div>
 
