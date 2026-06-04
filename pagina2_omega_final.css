@@ -1,4 +1,4 @@
-body {
+ body {
     margin: 0;
     padding: 0;
     background: #000;
@@ -24,9 +24,12 @@ body::after {
 .fraseOmega, .fraseOmegaIta {
     opacity: 0;
     transform: translateY(8px);
+
+    /* ORDINE CORRETTO: prima pulsazione, poi fade */
     animation:
-        fadeOmega 3.5s ease forwards,
-        pulseOmega 2.6s ease-in-out infinite;
+        pulseOmega 2.6s ease-in-out infinite,
+        fadeOmega 3.5s ease forwards;
+
     filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22));
 }
 
@@ -40,7 +43,7 @@ body::after {
     font-size: 1.28rem;
 }
 
-/* FADE OMEGA — ora NON sparisce più */
+/* FADE OMEGA — NON spegne più la pulsazione */
 @keyframes fadeOmega {
     0%   { opacity: 0; transform: translateY(8px); }
     25%  { opacity: 1; transform: translateY(0); }
@@ -48,11 +51,11 @@ body::after {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* AURA OMEGA — lenta, sottile, visibile */
+/* AURA OMEGA — glow rosso pulsante */
 @keyframes pulseOmega {
     0%   { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.18)); }
     30%  { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.32)); }
     55%  { filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22)); }
     80%  { filter: drop-shadow(0 0 7px rgba(200, 40, 40, 0.35)); }
     100% { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.20)); }
-}
+} 
