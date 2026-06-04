@@ -1,76 +1,108 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- ANTI-CACHE -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcidiacono Interactive</title>
 
     <style>
+        /* RESET */
         body {
             margin: 0;
             padding: 0;
             background: #000;
-            color: #f5f5f5;
+            color: #fff;
             font-family: "Montserrat", sans-serif;
-            text-align: center;
             overflow: hidden;
         }
 
-        .logo {
-            opacity: 0;
-            margin-top: 28vh;
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            animation: fadeIn 2.2s ease forwards;
+        /* GRANA CINEMATOGRAFICA */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image: url('https://i.imgur.com/8fK4h7v.png');
+            opacity: 0.08;
+            mix-blend-mode: overlay;
         }
 
-        .enter-btn {
+        /* LOGO IN ALTO */
+        .logoTop {
+            position: absolute;
+            top: 4vh;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.1rem;
+            letter-spacing: 0.25rem;
             opacity: 0;
-            margin-top: 3rem;
+            animation: fadeInLogo 2.2s ease forwards;
+            color: #fff;
+            text-shadow: 0 0 6px rgba(200, 40, 40, 0.45); /* glow MEDIO */
+        }
+
+        /* PULSANTE CENTRALE */
+        .enterWrapper {
+            position: absolute;
+            top: 55vh;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInButton 3s ease forwards;
+        }
+
+        .enterButton {
             display: inline-block;
-            font-size: 1.2rem;
-            padding: 0.6rem 1.4rem;
-            border: 1px solid #f5f5f5;
+            padding: 14px 42px;
+            font-size: 1.1rem;
+            letter-spacing: 0.15rem;
+            color: #fff; /* testo bianco */
+            border: 2px solid rgba(200, 40, 40, 0.8); /* bordo rosso */
+            background: transparent; /* sfondo nero */
             text-decoration: none;
-            color: #f5f5f5;
-            letter-spacing: 1px;
-            transition: 0.3s ease;
+            transition: 0.25s ease;
+            text-shadow: 0 0 6px rgba(200, 40, 40, 0.35);
+            box-shadow: 0 0 12px rgba(200, 40, 40, 0.25);
+            animation: pulseButton 3.2s ease-in-out infinite;
         }
 
-        .enter-btn:hover {
-            background: #f5f5f5;
-            color: #000;
+        /* HOVER */
+        .enterButton:hover {
+            box-shadow: 0 0 18px rgba(200, 40, 40, 0.55);
+            text-shadow: 0 0 10px rgba(200, 40, 40, 0.55);
+            transform: scale(1.03);
         }
 
-        .fade-late {
-            animation: fadeLate 3.4s ease forwards;
+        /* ANIMAZIONI */
+        @keyframes fadeInLogo {
+            0% { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+            100% { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInButton {
+            0% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+            100% { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
-        @keyframes fadeLate {
-            0% { opacity: 0; transform: translateY(10px); }
-            60% { opacity: 0; }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes pulseButton {
+            0%   { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
+            50%  { box-shadow: 0 0 18px rgba(200, 40, 40, 0.45); }
+            100% { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="logo">ARCIDIACONO INTERACTIVE</div>
+    <!-- LOGO IN ALTO -->
+    <div class="logoTop">
+        ARCIDIACONO INTERACTIVE
+    </div>
 
-    <!-- ENTER THE WORLD -->
-    <a href="pagina2_omega_final.html" class="enter-btn fade-late">ENTER THE WORLD</a>
+    <!-- PULSANTE CENTRALE -->
+    <div class="enterWrapper">
+        <a href="pagina2_omega_final.html" class="enterButton">ENTER THE WORLD</a>
+    </div>
 
 </body>
 </html>
