@@ -42,13 +42,15 @@ body::after {
     pointer-events: none;
 }
 
-/* Allineamento verticale perfetto */
+/* Allineamento perfetto usando la stessa struttura del testo reale */
 .glowLayer:nth-of-type(1) {
-    top: 0; /* sopra la frase inglese */
+    top: 32vh; /* stessa posizione della frase inglese */
+    font-size: 1.85rem;
 }
 
 .glowLayer:nth-of-type(2) {
-    top: 2.8rem; /* sopra la frase italiana */
+    top: calc(32vh + 2.8rem); /* posizione della frase italiana */
+    font-size: 1.28rem;
 }
 
 /* TESTO REALE */
