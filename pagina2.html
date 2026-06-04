@@ -27,52 +27,48 @@
         body::after {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             pointer-events: none;
             background-image: url('https://i.imgur.com/8fK4h7v.png');
             opacity: 0.08;
             mix-blend-mode: overlay;
         }
 
-        /* FRASE — SINCRONIZZATE */
-        .frase, .frase-ita {
+        /* CLASSI RINOMINATE */
+        .fraseX, .fraseItaX {
             opacity: 0;
-            transform: translateY(4px);
-            animation: fadeInOut 3.5s ease forwards, auraPulseV3 1.8s infinite;
-            filter: drop-shadow(0 0 5px rgba(198, 40, 40, 0.25));
+            transform: translateY(6px);
+            animation: fadeInOutX 3.5s ease forwards, auraPulseX 1.9s infinite;
+            filter: drop-shadow(0 0 5px rgba(200, 30, 30, 0.25));
         }
 
-        .frase {
+        .fraseX {
             margin-top: 32vh;
-            font-size: 1.8rem;
-            line-height: 1.4;
+            font-size: 1.85rem;
         }
 
-        .frase-ita {
+        .fraseItaX {
             margin-top: 1rem;
-            font-size: 1.25rem;
+            font-size: 1.28rem;
         }
 
-        /* FADE IN + OUT */
-        @keyframes fadeInOut {
-            0% { opacity: 0; transform: translateY(4px); }
-            20% { opacity: 1; transform: translateY(0); }
+        /* FADE RINOMINATO */
+        @keyframes fadeInOutX {
+            0% { opacity: 0; transform: translateY(6px); }
+            22% { opacity: 1; transform: translateY(0); }
             70% { opacity: 1; }
-            100% { opacity: 0; transform: translateY(-4px); }
+            100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* AURA ROSSA VIVA — VERSIONE V3 (NUOVO NOME) */
-        @keyframes auraPulseV3 {
-            0%   { filter: drop-shadow(0 0 4px rgba(198, 40, 40, 0.22)); }
-            17%  { filter: drop-shadow(0 0 7px rgba(198, 40, 40, 0.38)); }
-            31%  { filter: drop-shadow(0 0 5px rgba(198, 40, 40, 0.26)); }
-            49%  { filter: drop-shadow(0 0 8px rgba(198, 40, 40, 0.40)); }
-            63%  { filter: drop-shadow(0 0 4px rgba(198, 40, 40, 0.24)); }
-            82%  { filter: drop-shadow(0 0 6px rgba(198, 40, 40, 0.33)); }
-            100% { filter: drop-shadow(0 0 5px rgba(198, 40, 40, 0.28)); }
+        /* AURA ROSSA — VERSIONE X (NUOVO NOME, NUOVI VALORI) */
+        @keyframes auraPulseX {
+            0%   { filter: drop-shadow(0 0 4px rgba(200, 30, 30, 0.22)); }
+            19%  { filter: drop-shadow(0 0 8px rgba(200, 30, 30, 0.40)); }
+            33%  { filter: drop-shadow(0 0 5px rgba(200, 30, 30, 0.28)); }
+            51%  { filter: drop-shadow(0 0 9px rgba(200, 30, 30, 0.42)); }
+            67%  { filter: drop-shadow(0 0 4px rgba(200, 30, 30, 0.24)); }
+            84%  { filter: drop-shadow(0 0 7px rgba(200, 30, 30, 0.36)); }
+            100% { filter: drop-shadow(0 0 5px rgba(200, 30, 30, 0.30)); }
         }
     </style>
 
@@ -86,8 +82,8 @@
 
 <body>
 
-    <div class="frase">Every story has its fractures.</div>
-    <div class="frase-ita">Ogni storia ha le sue fratture.</div>
+    <div class="fraseX">Every story has its fractures.</div>
+    <div class="fraseItaX">Ogni storia ha le sue fratture.</div>
 
 </body>
 </html>
