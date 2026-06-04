@@ -1,66 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 200 200">
 
-<svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
-   version="1.1"
-   id="svg1"
-   sodipodi:docname="AI_logotipo_ArcidiaconoInteractive_v01.svg"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xml:space="preserve"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-
-<sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.68862935"
-     inkscape:cx="396.43968"
-     inkscape:cy="445.08704"
-     inkscape:window-width="1920"
-     inkscape:window-height="991"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-
-<defs id="defs1" />
-
-<g inkscape:label="Livello 1" inkscape:groupmode="layer" id="layer1">
-
-<!-- TESTO (non modificato) -->
-<text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14.1111px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';writing-mode:lr-tb;direction:ltr;fill:#00a3ff;stroke:none;stroke-width:0.467039;fill-opacity:1"
-   x="27.238304"
-   y="140.98438"
-   id="use2"
-   transform="scale(0.87725762,1.139916)">
-<tspan
-     id="tspan3"
-     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14.1111px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';stroke-width:0.467039;fill:#00a3ff;fill-opacity:1;stroke:none"
-     x="27.238304"
-     y="140.98438"
-     sodipodi:role="line"
-     dx="0 -0.38421732 -0.38421732 0 0 0 0 0 0 -0.38421732 -0.38421732">
-ARCIDIACONO INTERACTIVE
-</tspan>
-</text>
-
-<!-- LOGO (stroke aumentato del +10%) -->
-<g id="g3" style="stroke:#c30913;stroke-opacity:1">
-
+  <!-- GRUPPO PRINCIPALE: SCALA + STROKE + COLORE -->
+  <g transform="scale(0.95238, 0.67373)"
+     stroke="#c30913"
+     stroke-width="0.1917"
+     fill="none">
 <path id="rect6"
    style="fill:none;stroke:#c30913;stroke-width:0.188286;stroke-opacity:1"
    d="m 87.776376,34.732648 c 3.067065,0.89193 6.127111,1.820685 9.223815,2.592379 1.751826,0.353772 3.505829,0.66469 5.231239,1.143793 0.98836,0.283472 1.98061,0.550443 2.97577,0.80431 l 0.75889,-0.896277 c -1.94805,-0.46882 -3.88559,-0.985139 -5.80506,-1.573929 -1.716326,-0.475249 -3.462171,-0.764917 -5.204923,-1.11283 -2.181586,-0.526726 -4.346528,-1.128453 -6.504743,-1.75449 z" />
@@ -92,3 +38,19 @@ ARCIDIACONO INTERACTIVE
 <path id="path20"
    style="fill:none;stroke:#c30913;stroke-width:0.188286;stroke-opacity:1"
    d="M 105.11474,5.2519062 85.279473,28.665753 c 2.158213,0.626037 4.323154,1.227764 6.504745,1.75449 1.74275,0.347913 3.488597,0.637581 5.204922
+
+  </g>
+
+  <!-- ⭐ TESTO ARCIDIACONO INTERACTIVE ⭐ -->
+  <text 
+      x="50%" 
+      y="92%" 
+      text-anchor="middle"
+      font-family="Segoe UI"
+      font-weight="600"
+      font-size="12"
+      fill="#00a3ff">
+      ARCIDIACONO INTERACTIVE
+  </text>
+
+</svg>
