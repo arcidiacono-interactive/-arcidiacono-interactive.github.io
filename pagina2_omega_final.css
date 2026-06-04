@@ -20,7 +20,7 @@ body::after {
     mix-blend-mode: overlay;
 }
 
-/* WRAPPER CHE PULSA — versione corretta */
+/* WRAPPER CHE PULSA — compatibile Edge */
 .omegaWrapper {
     display: inline-block;
     width: fit-content;
@@ -53,11 +53,11 @@ body::after {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* PULSAZIONE GLOW ROSSO */
+/* PULSAZIONE GLOW ROSSO — VERSIONE EDGE */
 @keyframes pulseOmega {
-    0%   { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.18)); }
-    30%  { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.32)); }
-    55%  { filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22)); }
-    80%  { filter: drop-shadow(0 0 7px rgba(200, 40, 40, 0.35)); }
-    100% { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.20)); }
+    0%   { text-shadow: 0 0 3px rgba(200, 40, 40, 0.25); }
+    30%  { text-shadow: 0 0 8px rgba(200, 40, 40, 0.45); }
+    55%  { text-shadow: 0 0 5px rgba(200, 40, 40, 0.30); }
+    80%  { text-shadow: 0 0 10px rgba(200, 40, 40, 0.55); }
+    100% { text-shadow: 0 0 3px rgba(200, 40, 40, 0.25); }
 }
