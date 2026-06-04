@@ -34,28 +34,28 @@
         /* ANIMAZIONI MORBIDE */
         .fade-in {
             opacity: 0;
-            transform: translateY(3px);
-            animation: fadeInSoft 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            transform: translateY(2px);
+            animation: fadeInSoft 1.9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
 
         .fade-mid {
             opacity: 0;
-            transform: translateY(3px);
-            animation: fadeInSoft 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-            animation-delay: 0.4s;
+            transform: translateY(2px);
+            animation: fadeInSoft 1.9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            animation-delay: 0.35s;
         }
 
         .fade-late {
             opacity: 0;
-            transform: translateY(4px);
-            animation: fadeInSoft 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-            animation-delay: 1.2s;
+            transform: translateY(2px);
+            animation: fadeInSoft 1.9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            animation-delay: 1.1s;
         }
 
         @keyframes fadeInSoft {
             from {
                 opacity: 0;
-                transform: translateY(3px);
+                transform: translateY(2px);
             }
             to {
                 opacity: 1;
@@ -65,21 +65,21 @@
 
         /* GLOW ROSSO LEGGERISSIMO */
         .logo-glow {
-            filter: drop-shadow(0 0 6px rgba(214, 40, 40, 0.35));
+            filter: drop-shadow(0 0 5px rgba(214, 40, 40, 0.32));
         }
 
         /* BOTTONE ENTER */
         .enter-btn {
             display: inline-block;
-            margin-top: 38px; /* leggermente più basso per micro-asimmetria */
+            margin-top: 34px; /* micro-asimmetria calibrata */
             padding: 14px 32px;
             border: 2px solid #d62828;
             color: #d62828;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.18rem;
             letter-spacing: 1px;
             transition: 0.3s ease;
-            transform: scale(0.98);
+            transform: scale(0.985);
         }
 
         .enter-btn:hover {
@@ -90,7 +90,7 @@
         }
 
         header {
-            padding: 22px 0; /* leggermente più alto */
+            padding: 20px 0; /* leggermente più alto ma quasi impercettibile */
         }
     </style>
 </head>
@@ -99,7 +99,7 @@
 
     <!-- HEADER MINIMALE (NO MENU) -->
     <header>
-        <h1 class="fade-in" style="font-size: 1.55rem; letter-spacing: 2px; color: #d62828;">
+        <h1 class="fade-in" style="font-size: 1.52rem; letter-spacing: 2px; color: #d62828;">
             ARCIDIACONO INTERACTIVE
         </h1>
     </header>
@@ -108,7 +108,7 @@
     <img src="AI_logotipo_ArcidiaconoInteractive_v01.svg"
          alt="Logo Arcidiacono Interactive"
          class="fade-mid logo-glow"
-         style="width: 200px; margin-top: 42px;">
+         style="width: 198px; margin-top: 40px;">
 
     <!-- ENTER THE WORLD -->
     <a href="pagina2.html" class="enter-btn fade-late">ENTER THE WORLD</a>
