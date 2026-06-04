@@ -34,21 +34,28 @@
         /* ANIMAZIONI MORBIDE */
         .fade-in {
             opacity: 0;
-            transform: translateY(6px);
+            transform: translateY(3px);
             animation: fadeInSoft 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        .fade-mid {
+            opacity: 0;
+            transform: translateY(3px);
+            animation: fadeInSoft 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            animation-delay: 0.4s;
         }
 
         .fade-late {
             opacity: 0;
-            transform: translateY(6px);
+            transform: translateY(4px);
             animation: fadeInSoft 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-            animation-delay: 1.3s;
+            animation-delay: 1.2s;
         }
 
         @keyframes fadeInSoft {
             from {
                 opacity: 0;
-                transform: translateY(6px);
+                transform: translateY(3px);
             }
             to {
                 opacity: 1;
@@ -64,7 +71,7 @@
         /* BOTTONE ENTER */
         .enter-btn {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 38px; /* leggermente più basso per micro-asimmetria */
             padding: 14px 32px;
             border: 2px solid #d62828;
             color: #d62828;
@@ -83,7 +90,7 @@
         }
 
         header {
-            padding: 25px 0;
+            padding: 22px 0; /* leggermente più alto */
         }
     </style>
 </head>
@@ -100,8 +107,8 @@
     <!-- LOGO -->
     <img src="AI_logotipo_ArcidiaconoInteractive_v01.svg"
          alt="Logo Arcidiacono Interactive"
-         class="fade-in logo-glow"
-         style="width: 200px; margin-top: 45px; animation-delay: 0.4s;">
+         class="fade-mid logo-glow"
+         style="width: 200px; margin-top: 42px;">
 
     <!-- ENTER THE WORLD -->
     <a href="pagina2.html" class="enter-btn fade-late">ENTER THE WORLD</a>
