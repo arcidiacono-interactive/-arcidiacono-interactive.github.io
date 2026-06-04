@@ -1,65 +1,79 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+
+    <!-- ANTI-CACHE -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pagina 2</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #000000;
-        color: white;
-        font-family: "Inter", sans-serif;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        opacity: 1;
-        transition: opacity 1.8s ease;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 2</title>
 
-    .frase {
-        font-size: 1.6rem;
-        line-height: 1.6;
-        text-align: center;
-        opacity: 0;
-        animation: fadeIn 3s ease forwards;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #f5f5f5;
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+        /* MICRO-GRANA CINEMATOGRAFICA */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url('https://i.imgur.com/8fK4h7v.png');
+            opacity: 0.08;
+            mix-blend-mode: overlay;
+        }
 
-    /* Fade-out verso Pagina 3 */
-    .fadeout {
-        opacity: 0;
-    }
-</style>
+        /* FRASE CENTRALE */
+        .frase {
+            margin-top: 32vh;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            opacity: 0;
+            transform: translateY(4px);
+            animation: fadeInSoft 2.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            filter: drop-shadow(0 0 4px rgba(214, 40, 40, 0.18)); /* glow rosso quasi invisibile */
+        }
 
+        .frase-ita {
+            font-size: 1.25rem;
+            opacity: 0;
+            transform: translateY(4px);
+            animation: fadeInSoft 2.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            animation-delay: 0.8s;
+            filter: drop-shadow(0 0 4px rgba(214, 40, 40, 0.15)); /* ancora più leggero */
+        }
+
+        @keyframes fadeInSoft {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="frase">
-    Every story has its fractures.<br>
-    Ogni storia ha le sue fratture.
-</div>
-
-<script>
-    // Attesa di 3 secondi → fade-out → redirect
-    setTimeout(() => {
-        document.body.classList.add("fadeout");
-        setTimeout(() => {
-            window.location.href = "pagina3.html";
-        }, 1800); // durata fade-out
-    }, 3000); // attesa prima della transizione
-</script>
+    <div class="frase">Every story has its fractures.</div>
+    <div class="frase-ita">Ogni storia ha le sue fratture.</div>
 
 </body>
 </html>
