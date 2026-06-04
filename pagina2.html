@@ -34,41 +34,41 @@
             mix-blend-mode: overlay;
         }
 
-        /* CLASSI RINOMINATE */
-        .fraseX, .fraseItaX {
+        /* CLASSI OMEGA (mai viste prima) */
+        .fraseOmega, .fraseOmegaIta {
             opacity: 0;
-            transform: translateY(6px);
-            animation: fadeInOutX 3.5s ease forwards, auraPulseX 1.9s infinite;
-            filter: drop-shadow(0 0 5px rgba(200, 30, 30, 0.25));
+            transform: translateY(8px);
+            animation:
+                fadeOmega 3.5s ease forwards,
+                pulseOmega 2.6s ease-in-out infinite;
+            filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22));
         }
 
-        .fraseX {
+        .fraseOmega {
             margin-top: 32vh;
             font-size: 1.85rem;
         }
 
-        .fraseItaX {
+        .fraseOmegaIta {
             margin-top: 1rem;
             font-size: 1.28rem;
         }
 
-        /* FADE RINOMINATO */
-        @keyframes fadeInOutX {
-            0% { opacity: 0; transform: translateY(6px); }
-            22% { opacity: 1; transform: translateY(0); }
-            70% { opacity: 1; }
-            100% { opacity: 0; transform: translateY(-6px); }
+        /* FADE OMEGA (nuovo nome, nuova struttura) */
+        @keyframes fadeOmega {
+            0%   { opacity: 0; transform: translateY(8px); }
+            25%  { opacity: 1; transform: translateY(0); }
+            70%  { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-8px); }
         }
 
-        /* AURA ROSSA — VERSIONE X (NUOVO NOME, NUOVI VALORI) */
-        @keyframes auraPulseX {
-            0%   { filter: drop-shadow(0 0 4px rgba(200, 30, 30, 0.22)); }
-            19%  { filter: drop-shadow(0 0 8px rgba(200, 30, 30, 0.40)); }
-            33%  { filter: drop-shadow(0 0 5px rgba(200, 30, 30, 0.28)); }
-            51%  { filter: drop-shadow(0 0 9px rgba(200, 30, 30, 0.42)); }
-            67%  { filter: drop-shadow(0 0 4px rgba(200, 30, 30, 0.24)); }
-            84%  { filter: drop-shadow(0 0 7px rgba(200, 30, 30, 0.36)); }
-            100% { filter: drop-shadow(0 0 5px rgba(200, 30, 30, 0.30)); }
+        /* AURA OMEGA — lenta, sottile, visibile, continua */
+        @keyframes pulseOmega {
+            0%   { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.18)); }
+            30%  { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.32)); }
+            55%  { filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22)); }
+            80%  { filter: drop-shadow(0 0 7px rgba(200, 40, 40, 0.35)); }
+            100% { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.20)); }
         }
     </style>
 
@@ -82,8 +82,8 @@
 
 <body>
 
-    <div class="fraseX">Every story has its fractures.</div>
-    <div class="fraseItaX">Ogni storia ha le sue fratture.</div>
+    <div class="fraseOmega">Every story has its fractures.</div>
+    <div class="fraseOmegaIta">Ogni storia ha le sue fratture.</div>
 
 </body>
 </html>
