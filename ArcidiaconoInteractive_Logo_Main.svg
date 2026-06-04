@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+
+  <!-- LOGO "A" con stroke rosso più spesso -->
+  <g fill="none" stroke="#C30913" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 10 L40 150" />
+    <path d="M100 10 L160 150" />
+    <path d="M60 110 L140 110" />
+  </g>
+
+  <!-- Testo ARCIDIACONO INTERACTIVE in Montserrat, azzurro elettrico -->
+  <text x="100" y="175"
+        font-family="Montserrat, sans-serif"
+        font-size="14"
+        fill="#00A3FF"
+        text-anchor="middle"
+        font-weight="600">
+    ARCIDIACONO INTERACTIVE
+  </text>
+
+</svg>
+
+
