@@ -20,8 +20,10 @@ body::after {
     mix-blend-mode: overlay;
 }
 
-/* WRAPPER CHE PULSA */
+/* WRAPPER CHE PULSA (box reale) */
 .omegaWrapper {
+    display: inline-block;          /* crea un box reale */
+    padding: 4px 12px;              /* invisibile ma necessario */
     animation: pulseOmega 2.6s ease-in-out infinite;
 }
 
@@ -57,4 +59,3 @@ body::after {
     55%  { filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22)); }
     80%  { filter: drop-shadow(0 0 7px rgba(200, 40, 40, 0.35)); }
     100% { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.20)); }
-}
