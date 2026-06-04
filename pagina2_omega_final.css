@@ -40,12 +40,12 @@ body::after {
     font-size: 1.28rem;
 }
 
-/* FADE OMEGA */
+/* FADE OMEGA — ora NON sparisce più */
 @keyframes fadeOmega {
     0%   { opacity: 0; transform: translateY(8px); }
     25%  { opacity: 1; transform: translateY(0); }
     70%  { opacity: 1; }
-    100% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* AURA OMEGA — lenta, sottile, visibile */
