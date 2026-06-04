@@ -1,4 +1,4 @@
- body {
+body {
     margin: 0;
     padding: 0;
     background: #000;
@@ -29,8 +29,6 @@ body::after {
     animation:
         pulseOmega 2.6s ease-in-out infinite,
         fadeOmega 3.5s ease forwards;
-
-    filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22));
 }
 
 .fraseOmega {
@@ -58,4 +56,4 @@ body::after {
     55%  { filter: drop-shadow(0 0 4px rgba(200, 40, 40, 0.22)); }
     80%  { filter: drop-shadow(0 0 7px rgba(200, 40, 40, 0.35)); }
     100% { filter: drop-shadow(0 0 3px rgba(200, 40, 40, 0.20)); }
-} 
+}
