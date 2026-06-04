@@ -50,11 +50,28 @@
 </head>
 
 <body>
+<div class="omegaWrapper">
 
-    <div class="omegaWrapper">
-        <div class="fraseOmega">Every story has its fractures.</div>
-        <div class="fraseOmegaIta">Ogni storia ha le sue fratture.</div>
-    </div>
+    <!-- LAYER FANTASMA (glow pulsante) -->
+    <div class="glowLayer">Every story has its fractures.</div>
+    <div class="glowLayer">Ogni storia ha le sue fratture.</div>
+
+    <!-- TESTO REALE -->
+    <div class="fraseOmega">Every story has its fractures.</div>
+    <div class="fraseOmegaIta">Ogni storia ha le sue fratture.</div>
+
+</div>
+
+<script>
+    // Forza Edge a ricalcolare l'animazione
+    setTimeout(() => {
+        const w = document.querySelector('.omegaWrapper');
+        w.style.animation = 'none';
+        void w.offsetWidth; // trigger reflow
+        w.style.animation = 'pulseOmega 2.6s ease-in-out infinite';
+    }, 100);
+</script>
+    
     <script>
     // Forza Edge a ricalcolare l'animazione
     setTimeout(() => {
