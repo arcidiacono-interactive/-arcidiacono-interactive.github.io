@@ -53,17 +53,17 @@
         @keyframes pulseLogoCombined {
             0% {
                 filter:
-                    drop-shadow(0 0 7px rgba(200, 40, 40, 0.50))
+                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.42))   /* ridotto */
                     drop-shadow(0 0 5px rgba(0, 140, 255, 0.18));
             }
             50% {
                 filter:
-                    drop-shadow(0 0 14px rgba(200, 40, 40, 0.80))
+                    drop-shadow(0 0 12px rgba(200, 40, 40, 0.68))  /* ridotto */
                     drop-shadow(0 0 9px rgba(0, 140, 255, 0.28));
             }
             100% {
                 filter:
-                    drop-shadow(0 0 7px rgba(200, 40, 40, 0.50))
+                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.42))   /* ridotto */
                     drop-shadow(0 0 5px rgba(0, 140, 255, 0.18));
             }
         }
@@ -86,7 +86,7 @@
 
         .logoTop {
             position: absolute;
-            top: 0.3vh; /* ALZATO → distanza percepita perfetta */
+            top: 1.0vh; /* puoi regolarlo, ma ora il glow è corretto */
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -101,7 +101,7 @@
         }
 
         .logoText {
-            margin-top: -4px; /* scritta attaccata come nell’originale */
+            margin-top: -4px; /* scritta attaccata */
             font-size: 0.95rem;
             letter-spacing: 0.18rem;
             color: #008CFF;
