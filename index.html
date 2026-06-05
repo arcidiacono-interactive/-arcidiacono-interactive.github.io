@@ -76,6 +76,24 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes pulseLogoCombined {
+    0% {
+        filter:
+            drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
+            drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
+    }
+    50% {
+        filter:
+            drop-shadow(0 0 12px rgba(200, 40, 40, 0.75))
+            drop-shadow(0 0 7px rgba(0, 140, 255, 0.22));
+    }
+    100% {
+        filter:
+            drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
+            drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
+    }
+}
+
         /* ========================= */
         /*     STRUTTURA GENERALE    */
         /* ========================= */
@@ -89,15 +107,13 @@
             text-align: center;
         }
 
-        .logoImg {
-            width: 210px;
-            filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45));
-            opacity: 0;
-            animation:
-                fadeInLogo 2.4s ease forwards,
-                pulseLogo 3.2s ease-in-out infinite,
-                pulseLogoAura 3.2s ease-in-out infinite;
-        }
+      .logoImg {
+    width: 210px;
+    opacity: 0;
+    animation:
+        fadeInLogo 2.4s ease forwards,
+        pulseLogoCombined 3.2s ease-in-out infinite;
+}
 
         /* SCRITTA SOTTO IL LOGO */
         .logoText {
