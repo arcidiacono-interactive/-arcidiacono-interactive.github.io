@@ -42,7 +42,7 @@
             width: 210px;
             filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45));
             opacity: 0;
-            animation: fadeInLogo 2.2s ease forwards;
+            animation: fadeInLogo 2.4s ease forwards, pulseLogo 3.2s ease-in-out infinite;
         }
 
         /* PULSANTE CENTRALE */
@@ -109,6 +109,11 @@
         transform: translateY(0) scale(1.00);
         filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45));
     }
+            @keyframes pulseLogo {
+    0%   { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45)); }
+    50%  { filter: drop-shadow(0 0 12px rgba(200, 40, 40, 0.75)); }
+    100% { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45)); }
+}
 }
     </style>
 </head>
