@@ -93,6 +93,23 @@
             50%  { box-shadow: 0 0 18px rgba(200, 40, 40, 0.45); }
             100% { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
         }
+        @keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        transform: translateY(8px) scale(0.94);
+        filter: drop-shadow(0 0 0px rgba(200, 40, 40, 0.0));
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.02);
+        filter: drop-shadow(0 0 10px rgba(200, 40, 40, 0.35));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1.00);
+        filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45));
+    }
+}
     </style>
 </head>
 
