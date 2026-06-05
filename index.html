@@ -53,25 +53,25 @@
         @keyframes pulseLogoCombined {
             0% {
                 filter:
-                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
-                    drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
+                    drop-shadow(0 0 7px rgba(200, 40, 40, 0.50))
+                    drop-shadow(0 0 5px rgba(0, 140, 255, 0.20));
             }
             50% {
                 filter:
-                    drop-shadow(0 0 12px rgba(200, 40, 40, 0.75))
-                    drop-shadow(0 0 7px rgba(0, 140, 255, 0.22));
+                    drop-shadow(0 0 14px rgba(200, 40, 40, 0.80))
+                    drop-shadow(0 0 9px rgba(0, 140, 255, 0.30));
             }
             100% {
                 filter:
-                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
-                    drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
+                    drop-shadow(0 0 7px rgba(200, 40, 40, 0.50))
+                    drop-shadow(0 0 5px rgba(0, 140, 255, 0.20));
             }
         }
 
         @keyframes pulseTextAura {
-            0%   { text-shadow: 0 0 4px rgba(0, 140, 255, 0.15); }
-            50%  { text-shadow: 0 0 7px rgba(0, 140, 255, 0.22); }
-            100% { text-shadow: 0 0 4px rgba(0, 140, 255, 0.15); }
+            0%   { text-shadow: 0 0 5px rgba(0, 140, 255, 0.20); }
+            50%  { text-shadow: 0 0 9px rgba(0, 140, 255, 0.32); }
+            100% { text-shadow: 0 0 5px rgba(0, 140, 255, 0.20); }
         }
 
         @keyframes pulseButton {
@@ -93,7 +93,7 @@
         }
 
         .logoImg {
-            width: 210px;
+            width: 225px; /* leggermente più grande ma non cafone */
             opacity: 0;
             animation:
                 fadeInLogo 2.4s ease forwards,
@@ -101,7 +101,7 @@
         }
 
         .logoText {
-            margin-top: 12px; /* distanza identica all’originale */
+            margin-top: 6px; /* distanza corretta, più vicina */
             font-size: 0.95rem;
             letter-spacing: 0.18rem;
             color: #008CFF;
@@ -109,7 +109,6 @@
             animation:
                 fadeInText 2.4s ease forwards,
                 pulseTextAura 3.2s ease-in-out infinite;
-            text-shadow: 0 0 6px rgba(0, 140, 255, 0.25);
         }
 
         .enterWrapper {
