@@ -39,9 +39,39 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
         @keyframes fadeInButton {
             0% { opacity: 0; transform: translateX(-50%) translateY(12px); }
             100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        /* PULSAZIONE UNIFICATA (3.2s) */
+        @keyframes pulseLogoCombined {
+            0% {
+                filter:
+                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
+                    drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
+            }
+            50% {
+                filter:
+                    drop-shadow(0 0 12px rgba(200, 40, 40, 0.75))
+                    drop-shadow(0 0 7px rgba(0, 140, 255, 0.22));
+            }
+            100% {
+                filter:
+                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
+                    drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
+            }
+        }
+
+        @keyframes pulseTextAura {
+            0%   { text-shadow: 0 0 4px rgba(0, 140, 255, 0.15); }
+            50%  { text-shadow: 0 0 7px rgba(0, 140, 255, 0.22); }
+            100% { text-shadow: 0 0 4px rgba(0, 140, 255, 0.15); }
         }
 
         @keyframes pulseButton {
@@ -50,55 +80,10 @@
             100% { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
         }
 
-        /* LOGO – PULSAZIONE PRINCIPALE */
-        @keyframes pulseLogo {
-            0%   { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45)); }
-            50%  { filter: drop-shadow(0 0 12px rgba(200, 40, 40, 0.75)); }
-            100% { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.45)); }
-        }
-
-        /* AURA ROSSA DEL LOGO */
-        @keyframes pulseLogoAura {
-            0%   { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.22)); }
-            50%  { filter: drop-shadow(0 0 10px rgba(200, 40, 40, 0.32)); }
-            100% { filter: drop-shadow(0 0 6px rgba(200, 40, 40, 0.22)); }
-        }
-
-        /* AURA AZZURRA DELLA SCRITTA */
-        @keyframes pulseTextAura {
-            0%   { text-shadow: 0 0 4px rgba(0, 140, 255, 0.15); }
-            50%  { text-shadow: 0 0 7px rgba(0, 140, 255, 0.22); }
-            100% { text-shadow: 0 0 4px rgba(0, 140, 255, 0.15); }
-        }
-
-        @keyframes fadeInText {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulseLogoCombined {
-    0% {
-        filter:
-            drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
-            drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
-    }
-    50% {
-        filter:
-            drop-shadow(0 0 12px rgba(200, 40, 40, 0.75))
-            drop-shadow(0 0 7px rgba(0, 140, 255, 0.22));
-    }
-    100% {
-        filter:
-            drop-shadow(0 0 6px rgba(200, 40, 40, 0.45))
-            drop-shadow(0 0 4px rgba(0, 140, 255, 0.15));
-    }
-}
-
         /* ========================= */
         /*     STRUTTURA GENERALE    */
         /* ========================= */
 
-        /* LOGO IN ALTO */
         .logoTop {
             position: absolute;
             top: 6vh;
@@ -107,27 +92,26 @@
             text-align: center;
         }
 
-      .logoImg {
-    width: 210px;
-    opacity: 0;
-    animation:
-        fadeInLogo 2.4s ease forwards,
-        pulseLogoCombined 3.2s ease-in-out infinite;
-}
+        .logoImg {
+            width: 210px;
+            opacity: 0;
+            animation:
+                fadeInLogo 2.4s ease forwards,
+                pulseLogoCombined 3.2s ease-in-out infinite;
+        }
 
-        /* SCRITTA SOTTO IL LOGO */
         .logoText {
-            margin-top: 12px;
-            font-size: 1.1rem;
-            letter-spacing: 0.15rem;
+            margin-top: 12px; /* distanza identica all’originale */
+            font-size: 0.95rem;
+            letter-spacing: 0.18rem;
             color: #008CFF;
             opacity: 0;
             animation:
                 fadeInText 2.4s ease forwards,
                 pulseTextAura 3.2s ease-in-out infinite;
+            text-shadow: 0 0 6px rgba(0, 140, 255, 0.25);
         }
 
-        /* PULSANTE CENTRALE */
         .enterWrapper {
             position: absolute;
             top: 55vh;
@@ -166,6 +150,7 @@
     <!-- LOGO IN ALTO -->
     <div class="logoTop">
         <img src="AI_logo_symbol.svg" class="logoImg" alt="Arcidiacono Interactive Logo">
+        <p class="logoText">ARCIDIACONO INTERACTIVE</p>
     </div>
 
     <!-- PULSANTE CENTRALE -->
