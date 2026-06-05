@@ -9,7 +9,6 @@
     <title>Arcidiacono Interactive</title>
 
     <style>
-        /* RESET */
         body {
             margin: 0;
             padding: 0;
@@ -19,7 +18,6 @@
             overflow: hidden;
         }
 
-        /* GRANA CINEMATOGRAFICA */
         body::after {
             content: "";
             position: fixed;
@@ -29,10 +27,6 @@
             opacity: 0.08;
             mix-blend-mode: overlay;
         }
-
-        /* ========================= */
-        /*     ANIMAZIONI GLOBALI    */
-        /* ========================= */
 
         @keyframes fadeInLogo {
             0% { opacity: 0; transform: translateY(-8px); }
@@ -49,7 +43,6 @@
             100% { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
-        /* PULSAZIONE UNIFICATA (3.2s) */
         @keyframes pulseLogoCombined {
             0% {
                 filter:
@@ -80,10 +73,6 @@
             100% { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
         }
 
-        /* ========================= */
-        /*     STRUTTURA GENERALE    */
-        /* ========================= */
-
         .logoTop {
             position: absolute;
             top: 1.0vh;
@@ -102,8 +91,8 @@
 
         .logoText {
             margin-top: -12px;
-            font-size: 0.95rem;
-            letter-spacing: 0.18rem;
+            font-size: 1.10rem; /* ⭐ AUMENTATA */
+            letter-spacing: 0.20rem;
             color: #008CFF;
             opacity: 0;
             animation:
@@ -147,13 +136,11 @@
 
 <body>
 
-    <!-- LOGO IN ALTO -->
     <div class="logoTop">
         <img src="AI_logo_symbol.svg" class="logoImg" alt="Arcidiacono Interactive Logo">
         <p class="logoText">ARCIDIACONO INTERACTIVE</p>
     </div>
 
-    <!-- PULSANTE CENTRALE -->
     <div class="enterWrapper">
         <a href="pagina2_omega_final.html" class="enterButton">ENTER THE WORLD</a>
     </div>
