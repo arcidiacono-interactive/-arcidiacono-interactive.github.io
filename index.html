@@ -19,17 +19,27 @@
         overflow: hidden;
     }
 
-    /* CONTENITORE QR — FIX PER NON FARLO ESPLODERE */
+    /* LOGO */
+    #logo {
+        width: 220px;
+        margin-bottom: 40px;
+    }
+
+    #logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* QR RIDOTTO */
     #qrcode {
-        width: 600px;
-        height: 600px;
+        width: 350px;
+        height: 350px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 90px;
+        margin-bottom: 50px;
     }
 
-    /* Forza il QR a rispettare il contenitore */
     #qrcode img, #qrcode canvas {
         width: 100% !important;
         height: 100% !important;
@@ -37,16 +47,17 @@
 
     /* TESTO GLITCH ANIMATO */
     #glitch-text {
-        font-size: 80px;
+        font-size: 50px;
         color: #f23a34;
         letter-spacing: 2px;
         position: relative;
         text-align: center;
+        margin-bottom: 40px;
         text-shadow:
             2px 0 #f23a34,
             -2px 0 #f23a34,
-            0 0 18px rgba(242, 58, 52, 0.55),
-            0 0 32px rgba(242, 58, 52, 0.35);
+            0 0 12px rgba(242, 58, 52, 0.55),
+            0 0 20px rgba(242, 58, 52, 0.35);
         animation: flicker 2.2s infinite alternate;
     }
 
@@ -89,14 +100,44 @@
         50% { opacity: 0.85; }
         100% { opacity: 1; }
     }
+
+    /* BOTTONE ENTER */
+    #enter-btn {
+        font-size: 28px;
+        padding: 14px 40px;
+        border: 2px solid #f23a34;
+        color: #f23a34;
+        background: transparent;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: 0.25s;
+    }
+
+    #enter-btn:hover {
+        background: #f23a34;
+        color: #000;
+        box-shadow: 0 0 20px #f23a34;
+    }
 </style>
 </head>
 
 <body>
 
+<!-- LOGO -->
+<div id="logo">
+    <img src="logo.png" alt="Arcidiacono Interactive">
+</div>
+
+<!-- QR -->
 <div id="qrcode"></div>
+
+<!-- TESTO GLITCH -->
 <div id="glitch-text">ARE YOU READY?</div>
 
+<!-- BOTTONE ENTER -->
+<button id="enter-btn" onclick="location.href='home.html'">ENTER THE WORLD</button>
+
+<!-- Libreria QRCode.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
