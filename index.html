@@ -17,12 +17,15 @@
         align-items: center;
         height: 100vh;
         overflow: hidden;
+        text-align: center;
     }
 
-    /* LOGO */
+    /* LOGO RESPONSIVE */
     #logo {
-        width: 220px;
-        margin-bottom: 40px;
+        width: 18vw;
+        max-width: 180px;
+        min-width: 120px;
+        margin-bottom: 3vh;
     }
 
     #logo img {
@@ -30,14 +33,18 @@
         height: auto;
     }
 
-    /* QR RIDOTTO */
+    /* QR RESPONSIVE */
     #qrcode {
-        width: 350px;
-        height: 350px;
+        width: 30vw;
+        height: 30vw;
+        max-width: 300px;
+        max-height: 300px;
+        min-width: 180px;
+        min-height: 180px;
+        margin-bottom: 4vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 50px;
     }
 
     #qrcode img, #qrcode canvas {
@@ -45,14 +52,15 @@
         height: 100% !important;
     }
 
-    /* TESTO GLITCH ANIMATO */
+    /* TESTO GLITCH RESPONSIVE */
     #glitch-text {
-        font-size: 50px;
+        font-size: 4vw;
+        max-font-size: 50px;
+        min-font-size: 28px;
         color: #f23a34;
         letter-spacing: 2px;
         position: relative;
-        text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 3vh;
         text-shadow:
             2px 0 #f23a34,
             -2px 0 #f23a34,
@@ -101,10 +109,12 @@
         100% { opacity: 1; }
     }
 
-    /* BOTTONE ENTER */
+    /* BOTTONE RESPONSIVE */
     #enter-btn {
-        font-size: 28px;
-        padding: 14px 40px;
+        font-size: 2.2vw;
+        max-font-size: 26px;
+        min-font-size: 18px;
+        padding: 1.2vh 3vw;
         border: 2px solid #f23a34;
         color: #f23a34;
         background: transparent;
@@ -118,26 +128,31 @@
         color: #000;
         box-shadow: 0 0 20px #f23a34;
     }
+
+    /* MOBILE FIX */
+    @media (max-width: 600px) {
+        #glitch-text {
+            font-size: 28px;
+        }
+        #enter-btn {
+            font-size: 18px;
+        }
+    }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
 <div id="logo">
     <img src="logo.png" alt="Arcidiacono Interactive">
 </div>
 
-<!-- QR -->
 <div id="qrcode"></div>
 
-<!-- TESTO GLITCH -->
 <div id="glitch-text">ARE YOU READY?</div>
 
-<!-- BOTTONE ENTER -->
 <button id="enter-btn" onclick="location.href='home.html'">ENTER THE WORLD</button>
 
-<!-- Libreria QRCode.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
