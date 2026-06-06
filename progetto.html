@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progetto – Arcidiacono Interactive</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Grana */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.10;
+  z-index: 1;
+}
+
+/* Vignettatura */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 70%);
+  z-index: 2;
+}
+
+/* MENU PRINCIPALE */
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  gap: 22px;
+}
+
+.top-menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.top-menu a:hover {
+  opacity: 1;
+}
+
+/* Evita viola link visitati */
+a, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
+/* Wrapper */
+.wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  margin: 120px auto 80px;
+  padding: 0 20px;
+  line-height: 1.7;
+}
+
+/* Titoli */
+.page-title {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  margin-bottom: 40px;
+}
+
+/* Sezioni */
+.section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #dddddd;
+  margin-bottom: 10px;
+  border-left: 2px solid #ffffff;
+  padding-left: 10px;
+}
+
+.section-text {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU PRINCIPALE -->
+<div class="top-menu">
+  <a href="about.html">ABOUT</a>
+  <a href="gamepage.html">GAME</a>
+  <a href="devlog.html">DEVLOG</a>
+  <a href="social.html">SOCIAL</a>
+</div>
+
+<div class="wrapper">
+
+  <div class="page-title">PROGETTO</div>
+  <div class="page-subtitle">ARCIDIACONO INTERACTIVE</div>
+
+  <!-- IDENTITÀ -->
+  <div class="section">
+    <div class="section-title">Identità del progetto</div>
+    <div class="section-text">
+      Il progetto nasce come esperienza narrativa e psicologica in terza persona, costruita attorno
+      alle crepe dell’identità e ai meccanismi interiori che emergono quando le difese emotive
+      iniziano a cedere. Non è un gioco che punta sulla spettacolarità, ma sulla verità emotiva:
+      ogni scelta estetica, narrativa e di gameplay è pensata per restituire un senso di intimità,
+      fragilità e immersione.
+    </div>
+  </div>
+
+  <!-- DIREZIONE CREATIVA -->
+  <div class="section">
+    <div class="section-title">Direzione creativa</div>
+    <div class="section-text">
+      La direzione creativa si fonda su un principio semplice: meno rumore, più significato.
+      Ogni elemento – luci, ritmo, silenzi, animazioni – è progettato per comunicare qualcosa
+      del protagonista, senza mai ricorrere a spiegazioni esplicite. L’obiettivo è creare un
+      linguaggio visivo e sonoro che parli da solo, che accompagni il giocatore senza guidarlo
+      per mano.
+    </div>
+  </div>
+
+  <!-- DIREZIONE NARRATIVA -->
+  <div class="section">
+    <div class="section-title">Direzione narrativa</div>
+    <div class="section-text">
+      La storia non procede attraverso dialoghi o cutscene tradizionali, ma attraverso ambienti,
+      micro‑azioni e dettagli che emergono gradualmente. Le sette regioni interiori rappresentano
+      altrettanti stati emotivi estremi, e il viaggio del protagonista è un percorso di confronto
+      con ciò che ha evitato per troppo tempo. La narrativa è intima, simbolica, mai didascalica.
+    </div>
+  </div>
+
+  <!-- DIREZIONE ESTETICA -->
+  <div class="section">
+    <div class="section-title">Direzione estetica</div>
+    <div class="section-text">
+      L’estetica è cinematografica, minimale, controllata. Inquadrature stabili, palette scure,
+      luci mirate e ambienti sospesi contribuiscono a creare un’atmosfera che non vuole stupire,
+      ma far emergere un senso di peso emotivo. Ogni ambiente è un frammento di memoria, un luogo
+      che esiste più nella mente che nello spazio fisico.
+    </div>
+  </div>
+
+  <!-- DIREZIONE DI GAMEPLAY -->
+  <div class="section">
+    <div class="section-title">Direzione di gameplay</div>
+    <div class="section-text">
+      Il gameplay è lento, intenzionale, costruito attorno all’esplorazione e alle micro‑cutscene.
+      Non ci sono scelte multiple, non ci sono combattimenti, non ci sono sistemi complessi:
+      il gioco risponde ai comportamenti del giocatore in modo sottile, quasi invisibile, lasciando
+      che sia l’esperienza a parlare.
+    </div>
+  </div>
+
+  <!-- COSA NON È -->
+  <div class="section">
+    <div class="section-title">Cosa non è</div>
+    <div class="section-text">
+      Il progetto non è un action, non è un gioco di scelte morali, non è un’esperienza che premia
+      o punisce. Non cerca di essere spettacolare, non cerca di essere “divertente” nel senso
+      tradizionale del termine. È un viaggio interiore, non una sfida.
+    </div>
+  </div>
+
+  <!-- VISIONE A LUNGO TERMINE -->
+  <div class="section">
+    <div class="section-title">Visione a lungo termine</div>
+    <div class="section-text">
+      L’obiettivo è costruire un’esperienza che rimanga impressa non per la quantità di contenuti,
+      ma per la qualità dell’atmosfera e della verità emotiva. Il progetto crescerà in modo
+      organico, mantenendo coerenza estetica e narrativa, senza compromessi.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
