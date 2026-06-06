@@ -1,125 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcidiacono Interactive</title>
+<meta charset="UTF-8">
+<title>Arcidiacono Interactive — QR Reveal</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: "Montserrat", sans-serif;
-            overflow: hidden;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #fff;
+        font-family: 'Anton', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
 
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image: url('https://i.imgur.com/8fK4h7v.png');
-            opacity: 0.08;
-            mix-blend-mode: overlay;
-        }
+    #qrcode {
+        margin-bottom: 90px; /* distanza di sicurezza */
+    }
 
-        @keyframes fadeInLogo {
-            0% { opacity: 0; transform: translateY(-8px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+    #glitch-text {
+        font-size: 80px;
+        color: #f23a34;
+        letter-spacing: 2px;
+        position: relative;
+        text-align: center;
+        text-shadow:
+            2px 0 #f23a34,
+            -2px 0 #f23a34,
+            0 0 18px rgba(242, 58, 52, 0.55),
+            0 0 32px rgba(242, 58, 52, 0.35);
+        animation: flicker 2.2s infinite alternate;
+    }
 
-        @keyframes fadeInButton {
-            0% { opacity: 0; transform: translateX(-50%) translateY(12px); }
-            100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
+    /* Glitch layers */
+    #glitch-text::before,
+    #glitch-text::after {
+        content: "ARE YOU READY?";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        color: #f23a34;
+        opacity: 0.35;
+        clip-path: inset(0 0 0 0);
+        animation: glitch 1.8s infinite ease-in-out alternate-reverse;
+    }
 
-        @keyframes pulseLogoCombined {
-            0% {
-                filter:
-                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.42))
-                    drop-shadow(0 0 5px rgba(0, 140, 255, 0.18));
-            }
-            50% {
-                filter:
-                    drop-shadow(0 0 12px rgba(200, 40, 40, 0.68))
-                    drop-shadow(0 0 9px rgba(0, 140, 255, 0.28));
-            }
-            100% {
-                filter:
-                    drop-shadow(0 0 6px rgba(200, 40, 40, 0.42))
-                    drop-shadow(0 0 5px rgba(0, 140, 255, 0.18));
-            }
-        }
+    #glitch-text::before {
+        text-shadow: -3px 0 #ff4a4a;
+        transform: translate(3px, -2px);
+    }
 
-        @keyframes pulseButton {
-            0%   { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
-            50%  { box-shadow: 0 0 18px rgba(200, 40, 40, 0.45); }
-            100% { box-shadow: 0 0 10px rgba(200, 40, 40, 0.25); }
-        }
+    #glitch-text::after {
+        text-shadow: 3px 0 #c02020;
+        transform: translate(-3px, 2px);
+        animation-delay: 0.25s;
+    }
 
-        .logoTop {
-            position: absolute;
-            top: 4vh;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
+    /* Animazione glitch */
+    @keyframes glitch {
+        0% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+        20% { clip-path: inset(10% 0 40% 0); transform: translate(-3px, -2px); }
+        40% { clip-path: inset(80% 0 5% 0); transform: translate(3px, 2px); }
+        60% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 1px); }
+        80% { clip-path: inset(60% 0 30% 0); transform: translate(2px, -1px); }
+        100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+    }
 
-        .logoImg {
-            width: 230px;
-            opacity: 0;
-            animation:
-                fadeInLogo 2.4s ease forwards,
-                pulseLogoCombined 3.2s ease-in-out infinite;
-        }
-
-        .enterWrapper {
-            position: absolute;
-            top: 55vh;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            animation: fadeInButton 3s ease forwards;
-        }
-
-        .enterButton {
-            display: inline-block;
-            padding: 14px 42px;
-            font-size: 1.1rem;
-            letter-spacing: 0.15rem;
-            color: #fff;
-            border: 2px solid rgba(200, 40, 40, 0.8);
-            background: transparent;
-            text-decoration: none;
-            transition: 0.25s ease;
-            text-shadow: 0 0 6px rgba(200, 40, 40, 0.35);
-            box-shadow: 0 0 12px rgba(200, 40, 40, 0.25);
-            animation: pulseButton 3.2s ease-in-out infinite;
-        }
-
-        .enterButton:hover {
-            box-shadow: 0 0 18px rgba(200, 40, 40, 0.55);
-            text-shadow: 0 0 10px rgba(200, 40, 40, 0.55);
-            transform: scale(1.03);
-        }
-
-    </style>
+    /* Animazione flicker leggero */
+    @keyframes flicker {
+        0% { opacity: 1; }
+        50% { opacity: 0.85; }
+        100% { opacity: 1; }
+    }
+</style>
 </head>
 
 <body>
 
-    <div class="logoTop">
-        <img src="AI_logo_symbol.svg" class="logoImg" alt="Arcidiacono Interactive Logo">
-    </div>
+<div id="qrcode"></div>
+<div id="glitch-text">ARE YOU READY?</div>
 
-    <div class="enterWrapper">
-        <a href="pagina2_omega_final.html" class="enterButton">ENTER THE WORLD</a>
-    </div>
+<!-- Libreria QRCode.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+new QRCode(document.getElementById("qrcode"), {
+    text: "https://arcidiacono-interactive.github.io",
+    width: 1024,
+    height: 1024,
+    colorDark: "#f23a34",
+    colorLight: "#000000",
+    correctLevel: QRCode.CorrectLevel.H
+});
+</script>
 
 </body>
 </html>
