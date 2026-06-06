@@ -19,10 +19,23 @@
         overflow: hidden;
     }
 
+    /* CONTENITORE QR — FIX PER NON FARLO ESPLODERE */
     #qrcode {
-        margin-bottom: 90px; /* distanza di sicurezza */
+        width: 600px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 90px;
     }
 
+    /* Forza il QR a rispettare il contenitore */
+    #qrcode img, #qrcode canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* TESTO GLITCH ANIMATO */
     #glitch-text {
         font-size: 80px;
         color: #f23a34;
@@ -37,7 +50,6 @@
         animation: flicker 2.2s infinite alternate;
     }
 
-    /* Glitch layers */
     #glitch-text::before,
     #glitch-text::after {
         content: "ARE YOU READY?";
@@ -63,7 +75,6 @@
         animation-delay: 0.25s;
     }
 
-    /* Animazione glitch */
     @keyframes glitch {
         0% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
         20% { clip-path: inset(10% 0 40% 0); transform: translate(-3px, -2px); }
@@ -73,7 +84,6 @@
         100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
     }
 
-    /* Animazione flicker leggero */
     @keyframes flicker {
         0% { opacity: 1; }
         50% { opacity: 0.85; }
@@ -87,7 +97,6 @@
 <div id="qrcode"></div>
 <div id="glitch-text">ARE YOU READY?</div>
 
-<!-- Libreria QRCode.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
